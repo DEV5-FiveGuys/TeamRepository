@@ -1,4 +1,24 @@
-# Welcome to your organization's demo respository
-This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
+## **프로젝트 작업 흐름**
 
-The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+### 1. **프로젝트 개요**
+
+- **프로젝트 이름**: 국가별 선호 영화 시각화
+- **설명**: 국가별 영화 랭킹 데이터를 수집, 전처리, 시각화하여 플랫폼에 저장하고 프론트엔드로 시각적으로 표현하는 프로젝트.
+- **목표**: 데이터를 효율적으로 관리하고 시각화하여 사용자에게 직관적인 인터페이스 제공.
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/29dd0948-7b38-443b-af5a-c6bc908226ab/75ec1fdd-3445-4049-9c91-0cdea3e45dbb/image.png)
+
+---
+
+### 2. **역할 및 브랜치 구조**
+
+| 역할 | 담당자 | 브랜치 이름 | 주요 작업 내용 |
+| --- | --- | --- | --- |
+| **데이터 수집** | 차유진, 윤대열 | `data-collection` | API, 웹 크롤링, 실시간 데이터 수집. |
+| **데이터 전처리** | 부상혁, 윤병훈 | `data-preprocessing` | 데이터 정리, 클리닝, EDA(탐색적 분석). |
+| **DB 저장** | 부상혁, 윤병훈 | `db-storage` | 데이터베이스 스키마 설계, 데이터 저장. |
+| **프론트엔드** | 최은주 | `frontend` |  UI/UX 개발. |
+| **데이터 시각화** | 윤대열 | `data-visualization` | 데이터 시각화 |
+| **메인 브랜치 관리** | 차유진 | `main` | 병합 관리, 테스트, CI/CD 설정. |
+
+---
