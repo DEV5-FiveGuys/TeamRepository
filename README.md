@@ -6,7 +6,7 @@
 - **설명**: 국가별 영화 랭킹 데이터를 수집, 전처리, 시각화하여 플랫폼에 저장하고 프론트엔드로 시각적으로 표현하는 프로젝트.
 - **목표**: 데이터를 효율적으로 관리하고 시각화하여 사용자에게 직관적인 인터페이스 제공.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/29dd0948-7b38-443b-af5a-c6bc908226ab/75ec1fdd-3445-4049-9c91-0cdea3e45dbb/image.png)
+![image](https://github.com/user-attachments/assets/5893cb72-ca2f-480c-bddc-8af064317555)
 
 ---
 
