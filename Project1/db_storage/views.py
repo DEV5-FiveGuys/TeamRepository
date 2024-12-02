@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import transaction
-from models import Country, Genre, Actor, Movie, Ranking
-from serializers import *
+from .models import Country, Genre, Actor, Movie, Ranking
+from .serializers import *
 
 class BulkInsertRankingView(APIView):
     def post(self, request, *args, **kwargs):
@@ -22,12 +22,11 @@ class BulkInsertRankingView(APIView):
                     actors = movie_data.pop('actors')
 
                     movie, _ = Movie.objects.get_or_create(
-                        title=movie_data['title'],
-                        defaults={
-                            'score': movie_data['score'],
-                            'summary': movie_data['summary'],
-                            'poster_url': movie_data['image_url'],
-                        },
+                        title = movie_data['title'],
+                        release_year = movie_data['release_year'].split('-')[0],
+                        score = movie_data['score'],
+                        summary = movie_data['summary'],
+                        image_url =  movie_data['image_url'],
                     )
 
                     # 3. Handle genres and MovieGenre
@@ -43,6 +42,9 @@ class BulkInsertRankingView(APIView):
                         actor, _ = Actor.objects.get_or_create(name=actor_name)
                         actor_instances.append(actor)
                     movie.actors.set(actor_instances)
+                    
+                    # movie.genres.set([Genre.objects.get_or_create(name=genre)[0] for genre in genres])
+                    # movie.actors.set([Actor.objects.get_or_create(name=actor)[0] for actor in actors])
 
                     # 5. Create ranking
                     rank = serializer.validated_data['rank']

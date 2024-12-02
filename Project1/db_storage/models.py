@@ -25,18 +25,20 @@ class Actor(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=200)
+    release_year = models.CharField(max_length=20)  # TODO: DateField or DateTimeField
     score = models.DecimalField(max_digits=3, decimal_places=1)
-    summary = models.TextField()
-    poster_url = models.URLField()
+    summary = models.TextField(null=True, blank=True)
+    image_url = models.URLField(null=True, blank=True)
     genres = models.ManyToManyField(Genre, through='MovieGenre', related_name='movies')
     actors = models.ManyToManyField(Actor, through='MovieActor', related_name='movies')
 
     def __str__(self):
         return {
             'title': self.title,
+            'release_year': self.release_year,
             'score': self.score,
             'summary': self.summary,
-            'poster_url': self.poster_url,
+            'image_url': self.image_url,
             'genres': self.genres,
             'actors': self.actors
         }

@@ -19,7 +19,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ['id', 'title', 'score', 'summary', 'poster_url', 'genres', 'actors']
+        fields = ['id', 'title', 'release_year', 'score', 'summary', 'image_url', 'genres', 'actors']
 
 
 class RankingSerializer(serializers.Serializer):
