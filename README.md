@@ -24,10 +24,7 @@
 <br>새 기능 개발 시 **새로운 브랜치**를 생성:
     - 브랜치 이름: `feature/<작업내용>` (예: `feature/add-crawling`)
     
-    ```
     git checkout -b feature/add-crawling
-    
-    ```
 
 ---
 
