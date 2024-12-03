@@ -25,12 +25,7 @@
     - 브랜치 이름: `feature/<작업내용>` (예: `feature/add-crawling`)
     
     git checkout -b feature/add-crawling
-#### Pull Request 검토 멤버
 
-| 월 | 화 | 수 | 목 | 금 |
-| --- | --- | --- | --- | --- |
-| 부상혁 | 윤병훈 | 최은주 | 윤대열 | 차유진 |
-| 윤대열 | 차유진 | 부상혁 | 윤병훈 | 최은주 |
 ---
 
 ### 3. Commit
