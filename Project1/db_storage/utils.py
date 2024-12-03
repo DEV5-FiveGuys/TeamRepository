@@ -1,5 +1,4 @@
 import logging
-import json
 from django.db import transaction
 from .models import Movie, Genre, Actor, Country, Ranking, MovieGenre, MovieActor
 
@@ -80,3 +79,48 @@ def save_movies_from_json(parsed_data):
 
     logging.info(f"Successfully saved {len(saved_movies)} movies.")
     return saved_movies
+
+def get_movies_by_country_name(name: str) -> list[dict]:
+    '''
+    국가 이름에 따라 1~5위 영화를 반환
+    
+    Args:
+        name: 국가 이름
+    Returns:
+        moivies: 1~5위 영화의 정보를 담은 리스트
+    
+    '''
+    try:
+        country = Country.objects.filter(name__iexact=name).first() # 국가를 DB에서 get
+        if not country:
+            return {'status_code': 404, 'method': 'get_movies_by_country_name', 'error': f'{name} does not exist'}
+        # 랭킹 데이터를 1~5위 까지 get
+        rankings = (
+            Ranking.objects.filter(country = country)
+            .select_related('movie')
+            .order_by('rank')[:5]
+        ) 
+        # 데이터를 list[dict] 형태로 변환
+        movies = []
+        for ranking in rankings:
+            movie = ranking.movie
+            movies.append({
+                "rank": ranking.rank,
+                "title": movie.title,
+                "release_year": movie.release_year,
+                "score": float(movie.score),
+                "summary": movie.summary,
+                "image": movie.image_url,
+                "genres": list(movie.genres.values_list("name", flat=True)),
+                "actors": list(movie.actors.values_list("name", flat=True)),       
+            })
+        return movies if movies else {'status_code': 500, 'method': 'get_movies_by_country_name', 'error': 'movies list is empty'} 
+    
+    except Exception as e:
+        return {'status_code': 500, 'method': 'get_movies_by_country_name', 'error': str(e)}
+    
+    
+    
+if __name__ == '__main__':
+    movies = get_movies_by_country_name('South Korea')
+    print(movies)
