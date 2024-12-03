@@ -32,7 +32,7 @@ class Movie(models.Model):
     genres = models.ManyToManyField(Genre, through='MovieGenre', related_name='movies')
     actors = models.ManyToManyField(Actor, through='MovieActor', related_name='movies')
 
-    def __str__(self):
+    """def __str__(self):
         return {
             'title': self.title,
             'release_year': self.release_year,
@@ -41,7 +41,13 @@ class Movie(models.Model):
             'image_url': self.image_url,
             'genres': self.genres,
             'actors': self.actors
-        }
+        }"""
+    def __str__(self):
+        genres = ', '.join([genre.name for genre in self.genres.all()])
+        actors = ', '.join([actor.name for actor in self.actors.all()])
+        return f"Title: {self.title}, Release Year: {self.release_year}, Score: {self.score}, Genres: {genres}, Actors: {actors}"
+
+
 
 
 class MovieGenre(models.Model):
@@ -55,6 +61,10 @@ class MovieGenre(models.Model):
     
     class Meta:
         unique_together = ('movie', 'genre')
+
+    def __str__(self):
+        # Movie와 Genre의 이름을 연결한 문자열을 반환
+        return f"{self.movie.title} - {self.genre.name}"
         
 
 class MovieActor(models.Model):
@@ -63,8 +73,14 @@ class MovieActor(models.Model):
     
     class Meta:
         unique_together = ('movie', 'actor')
-        
+    
+    def __str__(self):
+        # Movie와 Genre의 이름을 연결한 문자열을 반환
+        return f"{self.movie.title} - {self.actor.name}"
+
+
 class Ranking(models.Model):
+    
     country = models.ForeignKey("Country", on_delete=models.CASCADE)
     movie = models.ForeignKey("Movie", on_delete=models.CASCADE)
     rank = models.PositiveSmallIntegerField()

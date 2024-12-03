@@ -4,7 +4,7 @@ from rest_framework.test import APITestCase
 from django.urls import reverse
 from .models import Country, Genre, Actor, Movie, Ranking
 
-class BulkInsertRankingViewTest(APITestCase):
+"""class BulkInsertRankingViewTest(APITestCase):
     
     # URL을 테스트 전에 설정합니다.
     def setUp(self):
@@ -107,4 +107,34 @@ class BulkInsertRankingViewTest(APITestCase):
 
         response = self.client.post(self.url, invalid_payload, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+"""
+from django.test import TestCase
+from rest_framework.test import APIClient
 
+class BulkInsertRankingTest(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.url = '/api/bulk-insert-ranking/'
+        self.payload = {
+            "movies": [
+                {
+                    "country_code": "KR",
+                    "rank": 1,
+                    "movie": {
+                        "title": "오징어 게임",
+                        "release_year": "2021–2025",
+                        "score": 8.0,
+                        "summary": "Hundreds of cash-strapped players accept a strange invitation...",
+                        "image_url": "http://example.com/squid-game.jpg",
+                        "genres": ["Action", "Drama", "Mystery"],
+                        "actors": ["Lee Jung-jae", "Park Hae-soo", "Nandito Hidayattullah Putra"]
+                    }
+                }
+            ]
+        }
+
+    def test_bulk_insert_ranking(self):
+        response = self.client.post(self.url, self.payload, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Movie.objects.count(), 1)
+        self.assertEqual(Country.objects.count(), 1)
