@@ -118,9 +118,3 @@ def get_movies_by_country_name(name: str) -> list[dict]:
     
     except Exception as e:
         return {'status_code': 500, 'method': 'get_movies_by_country_name', 'error': str(e)}
-    
-    
-    
-if __name__ == '__main__':
-    movies = get_movies_by_country_name('South Korea')
-    print(movies)
