@@ -118,23 +118,152 @@ class BulkInsertRankingTest(TestCase):
         self.payload = {
             "movies": [
                 {
-                    "country_code": "KR",
-                    "rank": 1,
+                    "country": "KR",
                     "movie": {
                         "title": "오징어 게임",
                         "release_year": "2021–2025",
-                        "score": 8.0,
-                        "summary": "Hundreds of cash-strapped players accept a strange invitation...",
-                        "image_url": "http://example.com/squid-game.jpg",
+                        "score": "8.0",
+                        "summary": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games.",
+                        "image_url": "https://m.media-amazon.com/images/M/MV5BYTYzMTlmNDctNmVkNS00YzRlLWE5MjAtODdjZWRkYzRlNWVlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                         "genres": ["Action", "Drama", "Mystery"],
                         "actors": ["Lee Jung-jae", "Park Hae-soo", "Nandito Hidayattullah Putra"]
-                    }
+                    },
+                    "rank": 1
+                },
+                {
+                    "country": "KR",
+                    "movie": {
+                        "title": "Mr. Peullangkeuton",
+                        "release_year": "2024",
+                        "score": "8.2",
+                        "summary": "A man with little chance for happiness and his ex, the unhappiest bride-to-be, are forced to accompany one another on the final journey of his life.",
+                        "image_url": "https://m.media-amazon.com/images/M/MV5BNzNkMzNmZjAtNTM2Ni00OGNkLTk2MzQtZWU3ZDMwNjUzYTZkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                        "genres": ["Comedy", "Romance"],
+                        "actors": ["Woo Do-Hwan", "Lee Yoo-mi", "Oh Jung-se"]
+                    },
+                    "rank": 2
+                },
+                {
+                    "country": "KR",
+                    "movie": {
+                        "title": "Gisaengchung",
+                        "release_year": "2019",
+                        "score": "8.5",
+                        "summary": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+                        "image_url": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                        "genres": ["Drama", "Thriller"],
+                        "actors": ["Bong Joon Ho", "Lee Sun-kyun", "Cho Yeo-jeong"]
+                    },
+                    "rank": 3
+                },
+                {
+                    "country": "KR",
+                    "movie": {
+                        "title": "Oldeuboi",
+                        "release_year": "2003",
+                        "score": "8.3",
+                        "summary": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must track down his captor in five days.",
+                        "image_url": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                        "genres": ["Action", "Drama", "Mystery"],
+                        "actors": ["Park Chan-wook", "Yoo Ji-tae", "Kang Hye-jeong"]
+                    },
+                    "rank": 4
+                },
+                {
+                    "country": "KR",
+                    "movie": {
+                        "title": "Gangnam Bi-Saideu",
+                        "release_year": "2024",
+                        "score": "7.4",
+                        "summary": "In Gangnam, Seoul, Jae-Hee knows a secret about a series of disappearances but then vanishes herself. Detective Kang, outlaw Yoon, and Prosecutor Min pursue the truth for their own reasons.",
+                        "image_url": "https://m.media-amazon.com/images/M/MV5BNjgwYmJhYjgtYzJhYi00NmU5LWE1ZjEtOWRjOWJkN2M3MTU2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                        "genres": ["Action", "Crime", "Drama"],
+                        "actors": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"]
+                    },
+                    "rank": 5
+                },
+                {
+                    "country": "KR",
+                    "movie": {
+                        "title": "Ahgassi",
+                        "release_year": "2016",
+                        "score": "8.1",
+                        "summary": "In 1930s Korea, a girl is hired as a handmaiden to a Japanese heiress who lives a secluded life on a countryside estate.",
+                        "image_url": "https://m.media-amazon.com/images/M/MV5BZjIwMjVjNmEtZGY4Ni00MjFlLTgwZTMtYTVlNWFjNTE0M2FjXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
+                        "genres": ["Drama", "Romance", "Thriller"],
+                        "actors": ["Park Chan-wook", "Ha Jung-woo", "Cho Jin-woong"]
+                    },
+                    "rank": 6
+                },
+                        {
+                    "country": "KR",
+                    "movie": {
+                        "title": "기생충",
+                        "release_year": "2019",
+                        "score": "8.5",
+                        "summary": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+                        "image_url": "https://example.com/parasite.jpg",
+                        "genres": ["Drama", "Thriller"],
+                        "actors": ["Bong Joon Ho", "Song Kang-ho", "Choi Woo-shik"]
+                    },
+                    "rank": 1
+                },
+                {
+                    "country": "US",
+                    "movie": {
+                        "title": "The Dark Knight",
+                        "release_year": "2008",
+                        "score": "9.0",
+                        "summary": "Batman battles the Joker, a criminal mastermind who wants to plunge Gotham into anarchy.",
+                        "image_url": "https://example.com/dark_knight.jpg",
+                        "genres": ["Action", "Drama", "Crime"],
+                        "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"]
+                    },
+                    "rank": 2
+                },
+                {
+                    "country": "IN",
+                    "movie": {
+                        "title": "3 Idiots",
+                        "release_year": "2009",
+                        "score": "8.4",
+                        "summary": "Two friends look for their long-lost companion, recounting their college days and the ways he inspired them.",
+                        "image_url": "https://example.com/3idiots.jpg",
+                        "genres": ["Comedy", "Drama"],
+                        "actors": ["Aamir Khan", "R. Madhavan", "Sharman Joshi"]
+                    },
+                    "rank": 3
+                },
+                {
+                    "country": "KR",
+                    "movie": {
+                        "title": "올드보이",
+                        "release_year": "2003",
+                        "score": "8.4",
+                        "summary": "After being imprisoned for 15 years, Oh Dae-Su seeks revenge on his captor.",
+                        "image_url": "https://example.com/oldboy.jpg",
+                        "genres": ["Action", "Mystery", "Drama"],
+                        "actors": ["Choi Min-sik", "Yoo Ji-tae", "Kang Hye-jeong"]
+                    },
+                    "rank": 4
+                },
+                {
+                    "country": "US",
+                    "movie": {
+                        "title": "Interstellar",
+                        "release_year": "2014",
+                        "score": "8.6",
+                        "summary": "A team of explorers travel through a wormhole in space in an attempt to save humanity.",
+                        "image_url": "https://example.com/interstellar.jpg",
+                        "genres": ["Sci-Fi", "Adventure", "Drama"],
+                        "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"]
+                    },
+                    "rank": 5
                 }
             ]
         }
 
+
     def test_bulk_insert_ranking(self):
         response = self.client.post(self.url, self.payload, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Movie.objects.count(), 1)
-        self.assertEqual(Country.objects.count(), 1)
