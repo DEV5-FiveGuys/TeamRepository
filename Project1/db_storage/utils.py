@@ -59,15 +59,10 @@ def save_movies_from_json(parsed_data):
                     if movie.release_year != movie_info.get('release_year', ''):
                         movie.release_year = movie_info.get('release_year', '')
                         updated_fields.append('release_year')
-
-                        
-                    #if movie_info.get('score', 0.0) not in [None, '']:  # score가 None이나 빈 문자열이 아닐 때만 비교
-                    #    new_score = float(movie_info.get('score', 0.0))  # score 값을 float로 변환
-                    #    if movie.score != new_score:  # 기존 score와 새 score가 다를 경우
-                    #        movie.score = new_score  # score 값 업데이트
-                    #        updated_fields.append('score')
-
-
+                    # 소수점 1자리까지 반올림하여 비교 => float형 부동소수점 비교때문에
+                    if round(movie.score, 1) != round(movie_info.get('score', 0.0), 1):
+                        movie.score = movie_info.get('score', 0.0)
+                        updated_fields.append('score')
                     if movie.summary != movie_info.get('summary', ''):
                         movie.summary = movie_info.get('summary', '')
                         updated_fields.append('summary')
