@@ -165,7 +165,7 @@ def crawling(top_n=10): # top_n <= 50까지만 문제없이 작동함
                     # 결과 추가 (요구된 JSON 구조에 맞게 변환)
                     result["movies"].append({
                         "country": country,
-                        f"Movie {len(result['movies'])+1}": {
+                        f"movie": {
                             "title": content.get("title"),
                             "release_year": content.get("year"),
                             "score": content.get("score"),
