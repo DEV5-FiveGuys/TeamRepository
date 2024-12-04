@@ -103,9 +103,12 @@ def configure_chrome_options():
     # options.add_argument("--headless")  # 브라우저를 화면에 표시하지 않음
     return options
 
+
+
+
 def crawling(top_n=10): # top_n <= 50까지만 문제없이 작동함
     """메인 함수."""
-    result = []
+    result = {"movies": []} # 최종 반환할 JSON 구조
     base_url  = 'https://www.imdb.com/search/title/?countries={}'
     base_xpath = '/html/body/div[4]/div[2]/div/div[2]/div/div'
     relative_xpaths = {
@@ -159,7 +162,20 @@ def crawling(top_n=10): # top_n <= 50까지만 문제없이 작동함
                     # content_dict에 순위 추가
                     content['rank'] = i
 
-                    result.append(content)
+                    # 결과 추가 (요구된 JSON 구조에 맞게 변환)
+                    result["movies"].append({
+                        "country": country,
+                        f"Movie {len(result['movies'])+1}": {
+                            "title": content.get("title"),
+                            "release_year": content.get("year"),
+                            "score": content.get("score"),
+                            "summary": content.get("summary"),
+                            "image_url": content.get("img"),
+                            "genres": content.get("genre", []),
+                            "actors": content.get("stars", [])
+                        },
+                        "rank": content["rank"]
+                    })
 
                     # 모달 닫기
                     close_button_xpath = '/html/body/div[4]/div[2]/div/div[1]/button'
