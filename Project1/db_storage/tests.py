@@ -119,18 +119,44 @@ class BulkInsertRankingTest(TestCase):
             "movies": [
                 {
                     "country_code": "KR",
-                    "rank": 1,
                     "movie": {
                         "title": "오징어 게임",
                         "release_year": "2021–2025",
-                        "score": 8.0,
-                        "summary": "Hundreds of cash-strapped players accept a strange invitation...",
-                        "image_url": "http://example.com/squid-game.jpg",
+                        "score": "8.0",
+                        "summary": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games.",
+                        "image_url": "https://example.com/image.jpg",
                         "genres": ["Action", "Drama", "Mystery"],
                         "actors": ["Lee Jung-jae", "Park Hae-soo", "Nandito Hidayattullah Putra"]
-                    }
+                    },
+                    "rank": 1
+                },
+                {
+                    "country_code": "US",
+                    "movie": {
+                        "title": "Inception",
+                        "release_year": "2010",
+                        "score": "8.8",
+                        "summary": "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea.",
+                        "image_url": "https://example.com/inception.jpg",
+                        "genres": ["Sci-Fi", "Action", "Thriller"],
+                        "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"]
+                    },
+                    "rank": 2
+                },
+                {
+                    "country_code": "IN",
+                    "movie": {
+                        "title": "RRR",
+                        "release_year": "2022",
+                        "score": "8.2",
+                        "summary": "A fictitious story about two legendary revolutionaries and their journey away from home.",
+                        "image_url": "https://example.com/rrr.jpg",
+                        "genres": ["Action", "Drama"],
+                        "actors": ["N.T. Rama Rao Jr.", "Ram Charan", "Alia Bhatt"]
+                    },
+                    "rank": 3
                 }
-            ]
+            ]   
         }
 
     def test_bulk_insert_ranking(self):

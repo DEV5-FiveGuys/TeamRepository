@@ -16,13 +16,24 @@ class BulkInsertRankingView(APIView):
             return Response({"error": "No movie data provided."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            # save_movies_from_json 함수 호출, 여기서 데이터 저장
-            saved_movies = save_movies_from_json(movies_data)
+            # save_movies_from_json 함수 호출
+            result = save_movies_from_json(movies_data)
 
-            if saved_movies:
-                return Response({"message": f"{len(saved_movies)} movies saved successfully."}, status=status.HTTP_201_CREATED)
-            else:
-                return Response({"error": "Failed to save movies."}, status=status.HTTP_400_BAD_REQUEST)
+            saved_movies = result['saved_movies']
+            duplicate_movies = result['duplicate_movies']
+            updated_movies = result['updated_movies']
+
+            return Response({
+                "message": f"{len(saved_movies)} movies saved successfully.",
+                "details": {
+                    "saved_movies_count": len(saved_movies),
+                    "duplicate_movies_count": len(duplicate_movies),
+                    "updated_movies_count": len(updated_movies),
+                },
+                "saved_movies": [movie.title for movie in saved_movies],
+                "duplicate_movies": [movie.title for movie in duplicate_movies],
+                "updated_movies": [movie.title for movie in updated_movies],
+            }, status=status.HTTP_201_CREATED)
 
         except Exception as e:
             logger.error(f"Error saving movies: {e}")
