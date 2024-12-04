@@ -23,6 +23,6 @@ class MovieSerializer(serializers.ModelSerializer):
 
 
 class RankingSerializer(serializers.Serializer):
-    country_code = serializers.CharField(max_length=10)
+    country_name = serializers.CharField(max_length=10)
     movie = MovieSerializer()
     rank = serializers.IntegerField()

@@ -59,9 +59,15 @@ def save_movies_from_json(parsed_data):
                     if movie.release_year != movie_info.get('release_year', ''):
                         movie.release_year = movie_info.get('release_year', '')
                         updated_fields.append('release_year')
-                    if movie.score != movie_info.get('score', 0.0):
-                        movie.score = movie_info.get('score', 0.0)
-                        updated_fields.append('score')
+
+                        
+                    #if movie_info.get('score', 0.0) not in [None, '']:  # score가 None이나 빈 문자열이 아닐 때만 비교
+                    #    new_score = float(movie_info.get('score', 0.0))  # score 값을 float로 변환
+                    #    if movie.score != new_score:  # 기존 score와 새 score가 다를 경우
+                    #        movie.score = new_score  # score 값 업데이트
+                    #        updated_fields.append('score')
+
+
                     if movie.summary != movie_info.get('summary', ''):
                         movie.summary = movie_info.get('summary', '')
                         updated_fields.append('summary')
@@ -83,8 +89,8 @@ def save_movies_from_json(parsed_data):
                         movie_actor_relations.append(MovieActor(movie=movie, actor=actor))
 
                 # 4. 랭킹 저장
-                country_code = movie_data['country_code']
-                country, _ = Country.objects.get_or_create(code=country_code)
+                country_name = movie_data['country']
+                country, _ = Country.objects.get_or_create(name=country_name)
                 rank = movie_data['rank']
 
                 if not Ranking.objects.filter(country=country, movie=movie).exists():
