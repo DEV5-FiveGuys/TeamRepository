@@ -125,7 +125,7 @@ def configure_chrome_options():
 
 
 
-def load_country_codes(filepath='C:/Users/chauj/Desktop/develop/TeamRepository/WebCrawling/data/raw/country_code.json'):
+def load_country_codes(filepath='C:/Users/chauj/Desktop/develop/TeamRepository/Project1/WebCrawling/data/raw/country_code.json'):
     """Load country codes from a JSON file."""
     with open(filepath, 'r', encoding='utf-8') as file:
         return json.load(file)
@@ -191,6 +191,16 @@ def measure_time(func, *args, **kwargs):
 
 
 
+def save_dict_as_json(data, file_path):
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+        print("JSON 파일이 성공적으로 저장되었습니다!")
+    except Exception as e:
+        print(f"An error occured:{e}")
+
+
+
 
 def crawling(top_n=10):
     """Main crawling function."""
@@ -222,8 +232,3 @@ def crawling(top_n=10):
                         "rank": content["rank"]
                     })
     return result
-
-
-
-
-
