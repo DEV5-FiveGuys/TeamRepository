@@ -125,7 +125,7 @@ def configure_chrome_options():
 
 
 
-def load_country_codes(filepath='C:/Users/chauj/Desktop/develop/TeamRepository/Project1/WebCrawling/data/raw/country_code.json'):
+def load_country_codes(filepath='./data/raw/country_code.json'):
     """Load country codes from a JSON file."""
     with open(filepath, 'r', encoding='utf-8') as file:
         return json.load(file)

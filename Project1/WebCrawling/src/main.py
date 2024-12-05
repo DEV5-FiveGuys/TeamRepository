@@ -39,7 +39,7 @@ def main(top_n=10):
                         },
                         "rank": content["rank"]
                     })
-        save_at = f'C:/Users/chauj/Desktop/develop/TeamRepository/Project1/WebCrawling/data/raw/movies_data_{today_date}.json'
+        save_at = f'./data/raw/movies_data_{today_date}.json'
         save_dict_as_json(result, save_at)
     return result
 
