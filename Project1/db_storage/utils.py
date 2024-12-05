@@ -37,11 +37,15 @@ def save_movies_from_json(parsed_data):
 
                 # 3. 영화 저장
                 movie_info = movie_data['movie']
+                # score null 처리
+                score = movie_info.get('score', 0.0)
+                if not score or score == 'null':
+                    score = 0.0
                 movie, created = Movie.objects.get_or_create(
                     title=movie_info['title'],
                     defaults={
                         'release_year': movie_info.get('release_year', ''),
-                        'score': movie_info.get('score', 0.0),
+                        'score': score,
                         'summary': movie_info.get('summary', ''),
                         'image_url': movie_info.get('image_url', ''),
                     }
@@ -59,8 +63,8 @@ def save_movies_from_json(parsed_data):
                             movie_actor_relations.append(MovieActor(movie=movie, actor=actor))
 
                 # 4. 랭킹 저장
-                country_code = movie_data['country_code']
-                country, _ = Country.objects.get_or_create(code=country_code)
+                country_name = movie_data['country']
+                country, _ = Country.objects.get_or_create(name=country_name)
                 rank = movie_data['rank']
 
                 if not Ranking.objects.filter(country=country, movie=movie).exists():
