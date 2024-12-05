@@ -14,21 +14,18 @@ def load_mask_image(mask_path):
     mask_image = Image.open(mask_path).convert("L")  # 흑백 이미지로 변환
     return np.array(mask_image)
 
-# 2. 국가별 summary 텍스트 합치기
-def combine_text_by_country(movies, selected_country):
+# 2. 국가별 데이터에서 summary 텍스트 추출
+def combine_text(movies):
     """
-    특정 국가의 summary 텍스트를 합칩니다.
+    영화 데이터에서 summary 텍스트를 합칩니다.
     """
     return " ".join(
-        [
-            re.sub(r"[^\w\s]", "", movie["summary"])  # 특수문자 제거
-            for movie in movies
-            if movie["country"] == selected_country
-        ]
+        re.sub(r"[^\w\s]", "", movie["summary"])  # 특수문자 제거
+        for movie in movies
     )
 
 # 3. 워드 클라우드 생성
-def generate_wordcloud(text, mask_array, stopwords, colormap="Oranges"):
+def generate_wordcloud(text, mask_array, stopwords, colormap="magma"):
     """
     주어진 텍스트와 마스크 배열을 사용해 워드 클라우드를 생성합니다.
     """
@@ -36,9 +33,10 @@ def generate_wordcloud(text, mask_array, stopwords, colormap="Oranges"):
         background_color="white",
         mask=mask_array,
         contour_color="black",  # 마스크 테두리 색상
-        contour_width=10,  # 마스크 테두리 두께
+        contour_width=2,  # 마스크 테두리 두께
         colormap=colormap,  # 색상 설정
-        max_words=200,  # 최대 표시 단어 수
+        max_words=100,  # 최대 표시 단어 수
+        prefer_horizontal= True, # 수평방향으로 글자 생성
         stopwords=stopwords  # 불용어 설정
     ).generate(text)
 
@@ -98,78 +96,79 @@ def save_wordcloud_to_html(wordcloud, html_filename="wordcloud.html", title="Wor
 # 테스트 데이터
 movies = [
     {
-    "img": "https://m.media-amazon.com/images/M/MV5BYTYzMTlmNDctNmVkNS00YzRlLWE5MjAtODdjZWRkYzRlNWVlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+    "rank": 1,
     "title": "오징어 게임",
-    "year": "2021–2025",
-    "score": "8.0",
+    "release_year": "2021–2025",
+    "score": 8.0,
     "summary": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes: a survival game that has a whopping 45.6 billion-won prize at stake.",
-    "country": "KR",
-    "genre": ["Action", "Drama", "Mystery"],
-    "stars": ["Lee Jung-jae", "Park Hae-soo", "Nandito Hidayattullah Putra"],
-    "rank": 1
+    "image": "https://m.media-amazon.com/images/M/MV5BYTYzMTlmNDctNmVkNS00YzRlLWE5MjAtODdjZWRkYzRlNWVlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+    "genres": ["Action", "Drama", "Mystery"],
+    "actors": ["Lee Jung-jae", "Park Hae-soo", "Nandito Hidayattullah Putra"]
 },
-    {
-    "img": "https://m.media-amazon.com/images/M/MV5BZWMyMjRkYzMtZDMyNS00ZTEwLTg3ZmMtYTljZDMxMjg2MjNhXkEyXkFqcGc@._V1_QL75_UY207_CR3,0,140,207_.jpg",
+{
+    "rank": 2,
     "title": "지금 거신 전화는",
-    "year": "2024-",
-    "score": "8.4",
+    "release_year": "2024-",
+    "score": 8.4,
     "summary": "Baek Sa Eon, a former presidential spokesman, marries Hong Hui Ju, a mute newspaper heiress, in an arranged union. When Hui Ju is kidnapped, their distant relationship is challenged as they navigate the crisis.",
-    "country": "KR",
-    "genre": ["Drama", "Mystery", "Romance", "Thriller"],
-    "stars": ["Yoo Yeon-seok", "Chae Soo-bin", "Heo Nam-jun"],
-    "rank": 2
+    "image": "https://m.media-amazon.com/images/M/MV5BZWMyMjRkYzMtZDMyNS00ZTEwLTg3ZmMtYTljZDMxMjg2MjNhXkEyXkFqcGc@._V1_QL75_UY207_CR3,0,140,207_.jpg",
+    "genres": ["Drama", "Mystery", "Romance", "Thriller"],
+    "actors": ["Yoo Yeon-seok", "Chae Soo-bin", "Heo Nam-jun"]
 },
-    {
-    "img": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_QL75_UX140_CR0,0,140,207_.jpg",
+{
+    "rank": 3,
     "title": "기생충",
-    "year": "2019",
-    "score": "8.5",
+    "release_year": "2019",
+    "score": 8.5,
     "summary": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
-    "country": "KR",
-    "genre": ["Dark Comedy", "Korean Drama", "Psychological Thriller", "Tragedy", "Drama"],
-    "stars": ["Song Kang-ho", "Cho Yeo-jeong","Lee Sun-kyun", "Choi Woo-sik"],
-    "rank": 3
+    "image": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_QL75_UX140_CR0,0,140,207_.jpg",
+    "genres": ["Dark Comedy", "Korean Drama", "Psychological Thriller", "Tragedy", "Drama"],
+    "actors": ["Song Kang-ho", "Cho Yeo-jeong", "Lee Sun-kyun", "Choi Woo-sik"]
 },
-            {
-    "img": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_QL75_UX140_CR0,0,140,207_.jpg",
+{
+    "rank": 4,
     "title": "올드보이",
-    "year": "2003",
-    "score": "8.3",
+    "release_year": "2003",
+    "score": 8.3,
     "summary": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must track down his captor in five days.",
-    "country": "KR",
-    "genre": ["Dark Comedy", "One-Person Army Action", "Psychological Thriller", "Action", "Drama"],
-    "stars": ["Choi Min-sik", "Yoo Ji-tae", "Kang Hye-jeong"],
-    "rank": 4
+    "image": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_QL75_UX140_CR0,0,140,207_.jpg",
+    "genres": ["Dark Comedy", "One-Person Army Action", "Psychological Thriller", "Action", "Drama"],
+    "actors": ["Choi Min-sik", "Yoo Ji-tae", "Kang Hye-jeong"]
 },
-                {
-    "img": "https://m.media-amazon.com/images/M/MV5BNjgwYmJhYjgtYzJhYi00NmU5LWE1ZjEtOWRjOWJkN2M3MTU2XkEyXkFqcGc@._V1_QL75_UY207_CR3,0,140,207_.jpg",
+{
+    "rank": 5,
     "title": "강남 비사이드",
-    "year": "2024-",
-    "score": "7.3",
+    "release_year": "2024-",
+    "score": 7.3,
     "summary": "In Gangnam, Seoul, Jae-Hee knows a secret about a series of disappearances but then vanishes herself. Detective Kang, outlaw Yoon, and Prosecutor Min pursue the truth for their own reasons.",
-    "country": "KR",
-    "genre": ["Action", "Crime", "Drama", "Mystery", "Thriller"],
-    "stars": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"],
-    "rank": 5
+    "image": "https://m.media-amazon.com/images/M/MV5BNjgwYmJhYjgtYzJhYi00NmU5LWE1ZjEtOWRjOWJkN2M3MTU2XkEyXkFqcGc@._V1_QL75_UY207_CR3,0,140,207_.jpg",
+    "genres": ["Action", "Crime", "Drama", "Mystery", "Thriller"],
+    "actors": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"]
 }
 ]
 
 # 마스크 로드
-mask_path = "C:\\Users\\ydy92\\Desktop\\IMDb_Visualization\\film_camera_mask.png" # 경로 수정해야돼요!
+mask_path = "visualizations/film_camera_mask.png"
 mask_array = load_mask_image(mask_path)
 
-# 국가별 텍스트 합치기
-selected_country = "KR"
-text = combine_text_by_country(movies, selected_country)
+# 텍스트 합치기
+text = combine_text(movies)
 
 # 불용어 설정
-stopwords = {"a", "the", "and", "of", "to", "is", "with", "in", "on", "at", "for", "this", "that", "their", "hui", "ju"} # 이건 데이터 여러개 받아보고 수정하겠습니다.
+stopwords = {
+    "a", "an", "the", "is", "are", "was", "were", "to", "of", "in", 
+    "with", "and", "for", "on", "at", "by", "this", "that", "these", 
+    "those", "there", "it", "be", "has", "have", "had", "will", "can", "do", 
+    "does", "did", "character", "story", "plot", "film", "movie", 
+    "scene", "part", "role", "play", "actor", "actress", "series", 
+    "place", "time", "moment", "way", "world", "day", "night", "year" , "Hui", "Ju"
+} # 이건 데이터 여러개 받아보고 수정하겠습니다.
 
 # 워드 클라우드 생성
 wordcloud = generate_wordcloud(text, mask_array, stopwords)
 
 # 워드 클라우드 표시
-# display_wordcloud(wordcloud, title=f"Word Cloud by Country ({selected_country})")
+# display_wordcloud(wordcloud, title=f"Word Cloud by Country")
 
 # HTML 파일로 저장
-save_wordcloud_to_html(wordcloud, html_filename="wordcloud.html", title=f"Word Cloud by Country ({selected_country})")
+save_wordcloud_to_html(wordcloud, html_filename="wordcloud.html", title=f"Word Cloud by Country")
