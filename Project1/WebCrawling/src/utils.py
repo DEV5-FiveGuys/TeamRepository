@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
-from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.service import Service
@@ -10,7 +9,8 @@ import time
 import json 
 from utils import *
 from tqdm import tqdm
-
+from tqdm import tqdm
+from datetime import datetime
 
 
 
@@ -125,6 +125,7 @@ def configure_chrome_options():
 
 
 
+
 def load_country_codes(filepath='./data/raw/country_code.json'):
     """Load country codes from a JSON file."""
     with open(filepath, 'r', encoding='utf-8') as file:
@@ -191,6 +192,7 @@ def measure_time(func, *args, **kwargs):
 
 
 
+
 def save_dict_as_json(data, file_path):
     try:
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -203,16 +205,18 @@ def save_dict_as_json(data, file_path):
 
 
 def crawling(top_n=10):
-    """Main crawling function."""
+    """Main crawling function.
+    자동으로 movies_data.json 중간저장
+    """
     result = {"movies": []}
     country_code_dict = load_country_codes()
+    today_date = str(datetime.today()).replace('-','')[:8]
 
     for country_code, country in tqdm(country_code_dict.items(), desc="Processing Countries"):
         with initialize_driver() as driver:
             wait = WebDriverWait(driver, 10)  # 타임아웃 설정
             country_url = BASE_URL.format(country_code)
             driver.get(country_url)
-            time.sleep(2)  # 페이지 로드 대기
 
             for i in range(1, top_n + 1):
                 content = process_movie(driver, wait, country, country_code, i)
@@ -231,4 +235,6 @@ def crawling(top_n=10):
                         },
                         "rank": content["rank"]
                     })
+        save_at = f'./data/raw/movies_data_{today_date}.json'
+        save_dict_as_json(result, save_at)
     return result
