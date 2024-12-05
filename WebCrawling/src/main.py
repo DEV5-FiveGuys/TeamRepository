@@ -1,7 +1,4 @@
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json 
 from utils import *
@@ -44,7 +41,7 @@ def main(top_n=10):
 if __name__ == "__main__":
     try:
         result = main(top_n = 10)
-        with open('./data/raw/movies_data_2.json', 'w', encoding='utf-8') as f:
+        with open('C:/Users/chauj/Desktop/develop/TeamRepository/WebCrawling/data/raw/movies_data_3.json', 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=4)
         print("JSON 파일이 성공적으로 저장되었습니다!")
     except Exception as e:
