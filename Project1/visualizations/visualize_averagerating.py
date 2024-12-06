@@ -91,8 +91,8 @@ movies = [
 ]
 '''
 
-# "kr"로 영화 데이터를 가져옴
-name = "kr"
+# "South Korea"로 영화 데이터를 가져옴
+name = "South Korea"
 movies = get_movies_by_country_name(name)
 
 # 실행
