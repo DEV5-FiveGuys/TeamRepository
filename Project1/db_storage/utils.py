@@ -39,11 +39,15 @@ def save_movies_from_json(parsed_data):
 
                 # 3. 영화 저장
                 movie_info = movie_data['movie']
+                # score null 처리
+                score = movie_info.get('score', 0.0)
+                if not score or score == 'null':
+                    score = 0.0
                 movie, created = Movie.objects.get_or_create(
                     title=movie_info['title'],
                     defaults={
                         'release_year': movie_info.get('release_year', ''),
-                        'score': movie_info.get('score', 0.0),
+                        'score': score,
                         'summary': movie_info.get('summary', ''),
                         'image_url': movie_info.get('image_url', ''),
                     }

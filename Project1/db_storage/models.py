@@ -31,16 +31,6 @@ class Movie(models.Model):
     genres = models.ManyToManyField(Genre, through='MovieGenre', related_name='movies')
     actors = models.ManyToManyField(Actor, through='MovieActor', related_name='movies')
 
-    """def __str__(self):
-        return {
-            'title': self.title,
-            'release_year': self.release_year,
-            'score': self.score,
-            'summary': self.summary,
-            'image_url': self.image_url,
-            'genres': self.genres,
-            'actors': self.actors
-        }"""
     def __str__(self):
         genres = ', '.join([genre.name for genre in self.genres.all()])
         actors = ', '.join([actor.name for actor in self.actors.all()])
