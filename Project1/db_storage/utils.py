@@ -1,3 +1,4 @@
+from decimal import Decimal
 import logging
 from django.db import transaction
 from .models import Movie, Genre, Actor, Country, Ranking, MovieGenre, MovieActor
@@ -42,7 +43,7 @@ def save_movies_from_json(parsed_data):
                 # score null 처리
                 score = movie_info.get('score', 0.0)
                 if not score or score == 'null':
-                    score = 0.0
+                    score = Decimal(0)
                 movie, created = Movie.objects.get_or_create(
                     title=movie_info['title'],
                     defaults={
@@ -64,8 +65,9 @@ def save_movies_from_json(parsed_data):
                         movie.release_year = movie_info.get('release_year', '')
                         updated_fields.append('release_year')
                     # 소수점 1자리까지 반올림하여 비교 => float형 부동소수점 비교때문에
-                    if round(movie.score, 1) != round(movie_info.get('score', 0.0), 1):
-                        movie.score = movie_info.get('score', 0.0)
+                    # 에러 있어서 round 삭제
+                    if movie.score != score:
+                        movie.score = score
                         updated_fields.append('score')
                     if movie.summary != movie_info.get('summary', ''):
                         movie.summary = movie_info.get('summary', '')

@@ -24,7 +24,11 @@ class BulkInsertRankingView(APIView):
                 return Response({"error": "No movie data provided."}, status=status.HTTP_400_BAD_REQUEST)
             
             # save_movies_from_json 함수 호출, 여기서 데이터 저장
-            saved_movies = save_movies_from_json(movies_data)
+            result = save_movies_from_json(movies_data)
+            
+            saved_movies = result['saved_movies']
+            duplicate_movies = result['duplicate_movies']
+            updated_movies = result['updated_movies']
             
             if not saved_movies:
                 return Response({"error": "Empty saved_movies."}, status=status.HTTP_400_BAD_REQUEST)
