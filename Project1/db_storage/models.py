@@ -69,7 +69,6 @@ class MovieActor(models.Model):
 
 
 class Ranking(models.Model):
-    
     country = models.ForeignKey("Country", on_delete=models.CASCADE)
     movie = models.ForeignKey("Movie", on_delete=models.CASCADE)
     rank = models.PositiveSmallIntegerField()
