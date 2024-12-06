@@ -112,8 +112,7 @@ def save_movies_from_json(parsed_data):
         'duplicate_movies': duplicate_movies,
         'updated_movies': updated_movies
     }
-
-
+    
 def get_movies_by_country_name(name: str) -> list[dict]:
     '''
     국가 이름에 따라 1~5위 영화를 반환
