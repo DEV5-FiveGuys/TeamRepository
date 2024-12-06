@@ -1,42 +1,46 @@
-from statistics import mean
-from visualize_TOP5 import display_svg_stars # TOP5 시각화 코드에서 함수 호출
+from collections import Counter
+import matplotlib.pyplot as plt
+import numpy as np
 from db_storage.utils import get_movies_by_country_name # db_storage.utils 에서 movies 받아오기위한 호출
 
-# 평균 별점 계산
-def calculate_average_rating(movies):
-    """
-    전체 영화의 평균 별점 계산 (10점 만점을 기준으로 입력됨)
-    """
-    scores = [float(movie['score']) for movie in movies]
-    return mean(scores)
+# html 렌더링
+import io
+import base64
 
-# HTML로 평균 별점 표시
-def display_average_rating_in_html(movies):
+
+# 한글 폰트 설정
+plt.rcParams['font.family'] = 'Malgun Gothic' 
+plt.rcParams['axes.unicode_minus'] = False  # 음수 기호 깨짐 방지
+
+# JSON 데이터에서 상위 n개의 장르를 카운트하여 반환
+def count_top_genres(movies, top_n=8):
     """
-    평균 별점을 HTML로 렌더링
+    JSON 데이터에서 상위 n개의 장르를 카운트하여 반환.
+
+    Parameters:
+        movies (list): 영화 데이터 리스트(JSON 형식)
+        top_n (int): 상위 몇 개의 장르를 반환할지 설정
+
+    Returns:
+        dict: 상위 n개의 장르와 그 개수
     """
-    avg_rating = calculate_average_rating(movies)
-    svg_stars = display_svg_stars(avg_rating)
-    html_content = f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Average Movie Rating</title>
-    </head>
-    <body>
-        <h1 style="text-align: center;">Average Rating: {avg_rating:.1f}/10</h1>
-        <div style="text-align: center;">{svg_stars}</div>
-    </body>
-    </html>
-    """
-    with open("average_rating.html", "w", encoding="utf-8") as file:
-        file.write(html_content)
-    print("HTML file 'average_rating.html' has been saved.")
+    # 모든 영화의 장르를 리스트로 수집
+    all_genres = [genre for movie in movies for genre in movie['genres']]
+    
+    # 장르별로 카운트
+    genre_counts = Counter(all_genres)
+    
+    # 상위 top_n개의 장르 추출
+    top_genres = genre_counts.most_common(top_n)
+    
+    # 딕셔너리 형태로 변환하여 반환
+    return dict(top_genres)
+
 
 # 테스트 데이터
 '''
+
+
 movies = [
     {
     "rank": 1,
@@ -90,10 +94,61 @@ movies = [
 }
 ]
 '''
-
-# "South Korea"로 영화 데이터를 가져옴
-name = "South Korea"
+# "kr"로 영화 데이터를 가져옴
+name = "kr"
 movies = get_movies_by_country_name(name)
+# ---
+# 1. 장르 데이터 카운트
+top_genres = count_top_genres(movies, top_n=8)
 
-# 실행
-display_average_rating_in_html(movies)
+# 2. 파이 차트 생성
+labels = list(top_genres.keys())
+sizes = list(top_genres.values())
+colors = plt.cm.Set3(np.linspace(0, 1, len(labels)))  # 색상 설정
+
+fig, ax = plt.subplots(figsize=(12, 10))
+wedges, texts, autotexts = ax.pie(
+    sizes,
+    labels=labels,
+    autopct='%1.1f%%',
+    startangle=90,  # 가장 큰 비율 항목을 맨 위로
+    colors=colors,
+    textprops={'fontsize': 20, 'weight': 'bold'},
+    wedgeprops={'edgecolor': 'white', 'linewidth': 4}  # 경계선 추가
+)
+
+ax.set_title("인기 장르", fontsize=18, weight="bold")
+plt.setp(autotexts, size=12, weight="bold")
+# plt.show()
+
+# ---
+# HTML 렌더링
+# 이미지 데이터를 메모리에 저장
+buffer = io.BytesIO()
+plt.savefig(buffer, format='png', dpi=300, bbox_inches='tight')  # 고화질 설정
+buffer.seek(0)  # 버퍼의 시작으로 이동
+
+# 이미지를 Base64로 인코딩
+image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+buffer.close()
+
+# Base64 이미지를 포함한 HTML 생성
+html_content = f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 장르 분석</title>
+</head>
+<body>
+    <img src="data:image/png;base64,{image_base64}" alt="Pie Chart" style="display: block; margin: 0 auto; max-width: 100%;">
+</body>
+</html>
+"""
+
+# HTML 파일 저장
+with open("genre_pie.html", "w", encoding="utf-8") as file:
+    file.write(html_content)
+
+print("HTML chart saved as 'genre_pie.html'. Open this file in a browser to view the chart.")
