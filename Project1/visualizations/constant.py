@@ -9,7 +9,7 @@ empty_star_svg: Final = \
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" style="fill:lightgray;"><path d="M528.1 171.5l-146.4-21.3L316.7 17c-12.6-25.6-54.8-25.6-67.4 0l-65 132.9-146.4 21.3c-26.2 3.8-36.7 36-17.7 54.6l105.9 103-25 145.5c-4.5 26.2 23 46 46.4 33.7L288 439.6l130.6 68.6c23.4 12.3 50.9-7.4 46.4-33.7l-25-145.5 105.9-103c19-18.6 8.5-50.8-17.8-54.6z"/></svg>'
 
 # wordcloud용 mask의 경로
-MASK_PATH: Final = 'visualizations/film_camera_mask.png'
+MASK_PATH: Final = 'visualizations/data/film_camera_mask.png'
 # 불용어
 STOPWORDS: Final = {
     "a", "an", "the", "is", "are", "was", "were", "to", "of", "in", 
