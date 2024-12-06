@@ -37,8 +37,6 @@ class Movie(models.Model):
         return f"Title: {self.title}, Release Year: {self.release_year}, Score: {self.score}, Genres: {genres}, Actors: {actors}"
 
 
-
-
 class MovieGenre(models.Model):
     '''
         Movie_Genre Join Table
