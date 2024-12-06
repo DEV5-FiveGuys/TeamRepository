@@ -6,6 +6,8 @@ import re
 from io import BytesIO
 import base64
 
+from db_storage.utils import get_movies_by_country_name # db_storage.utils 에서 movies 받아오기위한 호출
+
 # 1. 이미지 파일을 마스크로 변환
 def load_mask_image(mask_path):
     """
@@ -93,7 +95,14 @@ def save_wordcloud_to_html(wordcloud, html_filename="wordcloud.html", title="Wor
     print(f"HTML 파일이 {html_filename}로 저장되었습니다.")
 
 
+
+
+# "kr"로 영화 데이터를 가져옴
+name = "kr"
+movies = get_movies_by_country_name(name)
+
 # 테스트 데이터
+'''
 movies = [
     {
     "rank": 1,
@@ -146,6 +155,7 @@ movies = [
     "actors": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"]
 }
 ]
+'''
 
 # 마스크 로드
 mask_path = "visualizations/film_camera_mask.png"

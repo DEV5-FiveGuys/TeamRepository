@@ -1,10 +1,12 @@
 from collections import Counter
 import matplotlib.pyplot as plt
 import numpy as np
+from db_storage.utils import get_movies_by_country_name # db_storage.utils 에서 movies 받아오기위한 호출
 
 # html 렌더링
 import io
 import base64
+
 
 # 한글 폰트 설정
 plt.rcParams['font.family'] = 'Malgun Gothic' 
@@ -13,7 +15,7 @@ plt.rcParams['axes.unicode_minus'] = False  # 음수 기호 깨짐 방지
 # JSON 데이터에서 상위 n개의 장르를 카운트하여 반환
 def count_top_genres(movies, top_n=8):
     """
-    JSON 데이터에서 상위 n개의 장르를 카운트하여 반환합니다.
+    JSON 데이터에서 상위 n개의 장르를 카운트하여 반환.
 
     Parameters:
         movies (list): 영화 데이터 리스트(JSON 형식)
@@ -22,7 +24,7 @@ def count_top_genres(movies, top_n=8):
     Returns:
         dict: 상위 n개의 장르와 그 개수
     """
-    # 모든 영화의 장르를 평탄화(flatten)하여 리스트로 수집
+    # 모든 영화의 장르를 리스트로 수집
     all_genres = [genre for movie in movies for genre in movie['genres']]
     
     # 장르별로 카운트
@@ -35,7 +37,10 @@ def count_top_genres(movies, top_n=8):
     return dict(top_genres)
 
 
-# 예시 데이터
+# 테스트 데이터
+'''
+
+
 movies = [
     {
     "rank": 1,
@@ -88,8 +93,10 @@ movies = [
     "actors": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"]
 }
 ]
-
-
+'''
+# "kr"로 영화 데이터를 가져옴
+name = "kr"
+movies = get_movies_by_country_name(name)
 # ---
 # 1. 장르 데이터 카운트
 top_genres = count_top_genres(movies, top_n=8)

@@ -1,5 +1,6 @@
 from statistics import mean
 from visualize_TOP5 import display_svg_stars # TOP5 시각화 코드에서 함수 호출
+from db_storage.utils import get_movies_by_country_name # db_storage.utils 에서 movies 받아오기위한 호출
 
 # 평균 별점 계산
 def calculate_average_rating(movies):
@@ -34,7 +35,8 @@ def display_average_rating_in_html(movies):
         file.write(html_content)
     print("HTML file 'average_rating.html' has been saved.")
 
-# 예시 데이터
+# 테스트 데이터
+'''
 movies = [
     {
     "rank": 1,
@@ -87,7 +89,11 @@ movies = [
     "actors": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"]
 }
 ]
+'''
 
+# "kr"로 영화 데이터를 가져옴
+name = "kr"
+movies = get_movies_by_country_name(name)
 
 # 실행
 display_average_rating_in_html(movies)

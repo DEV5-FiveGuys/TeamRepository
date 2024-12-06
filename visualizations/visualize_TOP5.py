@@ -1,13 +1,4 @@
-'''
-## 주요 기능
-- Rank에 따라 상위 5개 영화를 필터링
-- IMDb 평점을 SVG 별점으로 시각화
-- 영화 데이터를 카드 형식 HTML로 저장
-
-## 사용 방법
-1. JSON 파일을 준비합니다.
-2. `save_movies_html` 함수를 호출하여 HTML 파일을 생성합니다.
-'''
+from db_storage.utils import get_movies_by_country_name # db_storage.utils 에서 movies 받아오기위한 호출
 
 # JSON 데이터에서 rank가 1~5인 영화만 필터링
 def filter_top_movies(movies, max_rank=5):
@@ -110,7 +101,7 @@ def save_movies_html(movies, filename="TOP5_movies.html"):
 
 # ---------------------------------
 # 테스트 데이터
-
+'''
 movies = [
     {
     "rank": 1,
@@ -163,6 +154,10 @@ movies = [
     "actors": ["Jo Woo-jin", "Ji Chang-wook", "Ha Yoon-kyung"]
 }
 ]
+'''
+
+name = "kr"  # korea movies 받아오기
+movies = get_movies_by_country_name(name)
 
 # 실행
 save_movies_html(movies)
