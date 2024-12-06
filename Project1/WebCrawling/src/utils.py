@@ -12,8 +12,6 @@ from tqdm import tqdm
 from tqdm import tqdm
 from datetime import datetime
 
-
-
 # 전역 상수 정의
 BASE_URL = 'https://www.imdb.com/search/title/?countries={}'
 BASE_XPATH = '/html/body/div[4]/div[2]/div/div[2]/div/div'
@@ -34,9 +32,6 @@ BUTTON_XPATH_TEMPLATE = (
     'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
 )
 
-
-
-
 def click_button(driver, wait, xpath:str):
     """
     Clicks a button specified by its XPATH.
@@ -48,9 +43,6 @@ def click_button(driver, wait, xpath:str):
     """
     button = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
     ActionChains(driver).click(button).perform()
-
-
-
 
 def scrape_modal_content(wait, base_xpath:str, relative_xpaths:dict)->dict:
     """
@@ -78,9 +70,6 @@ def scrape_modal_content(wait, base_xpath:str, relative_xpaths:dict)->dict:
         except Exception as e:
             print(f"Error fetching {element_name}: {e}")
     return extracted_content
-
-
-
 
 def scrape_modal_data(driver, base_xpath:str, relative_xpaths:dict)->dict:
     """
@@ -111,9 +100,6 @@ def scrape_modal_data(driver, base_xpath:str, relative_xpaths:dict)->dict:
     
     return extracted_data
 
-
-
-
 def configure_chrome_options():
     """Configure Chrome WebDriver options."""
     options = webdriver.ChromeOptions()
@@ -123,26 +109,17 @@ def configure_chrome_options():
     options.add_argument('--disable-dev-shm-usage')
     return options
 
-
-
-
-def load_country_codes(filepath='./data/raw/country_code.json'):
+def load_country_codes(filepath='./data/raw/country_code.json':str)->dict:
     """Load country codes from a JSON file."""
     with open(filepath, 'r', encoding='utf-8') as file:
         return json.load(file)
-
-
-
 
 def initialize_driver():
     """Initialize the Chrome WebDriver with options."""
     options = configure_chrome_options()
     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-
-
-
-def process_movie(driver, wait, country, country_code, rank):
+def process_movie(driver, wait, country:str, country_code:str, rank:int):
     """Process a single movie entry."""
     content = {}
     try:
@@ -172,15 +149,9 @@ def process_movie(driver, wait, country, country_code, rank):
         log_error(country, rank, e)
     return content
 
-
-
-
-def log_error(country, rank, error):
+def log_error(country:str, rank:int, error:str):
     """Log an error with contextual information."""
     print(f"Error processing item {rank} for {country}: {error}")
-
-
-
 
 def measure_time(func, *args, **kwargs):
     """Measure and print the execution time of a function."""
@@ -190,9 +161,6 @@ def measure_time(func, *args, **kwargs):
     print(f"Execution time: {elapsed_time:.2f} seconds.")
     return result
 
-
-
-
 def save_dict_as_json(data, file_path):
     try:
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -201,10 +169,7 @@ def save_dict_as_json(data, file_path):
     except Exception as e:
         print(f"An error occured:{e}")
 
-
-
-
-def crawling(top_n=10):
+def crawling(top_n=10:int)->dict:
     """Main crawling function.
     자동으로 movies_data.json 중간저장
     """
