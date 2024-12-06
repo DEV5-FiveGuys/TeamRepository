@@ -32,26 +32,32 @@ BUTTON_XPATH_TEMPLATE = (
     'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
 )
 
+
 def click_button(driver, wait, xpath:str):
     """
     Clicks a button specified by its XPATH.
 
-    :param driver: WebDriver instance used to control the browser
-    :param wait: WebDriverWait instance for setting timeout
-    :param xpath: XPATH of the button to be clicked
-    :return: None
+    Parameters:
+        driver: WebDriver instance used to control the browser
+        wait: WebDriverWait instance for setting timeout
+        xpath: XPATH of the button to be clicked
+    Return:
+        None
     """
     button = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
     ActionChains(driver).click(button).perform()
+
 
 def scrape_modal_content(wait, base_xpath:str, relative_xpaths:dict)->dict:
     """
     Extracts content from a modal dialog.
 
-    :param wait: WebDriverWait instance for setting timeout
-    :param base_xpath: Common XPATH shared by all elements
-    :param relative_xpaths: Dictionary mapping element names to their relative XPATHs
-    :return: Dictionary where keys are element names and values are their extracted content
+    Parameters:
+        wait: WebDriverWait instance for setting timeout
+        base_xpath: Common XPATH shared by all elements
+        relative_xpaths: Dictionary mapping element names to their relative XPATHs
+    Return:
+        extracted_content: Dictionary where keys are element names and values are their extracted content
     """
     extracted_content = {}
     for element_name, relative_xpath in relative_xpaths.items():
@@ -71,14 +77,17 @@ def scrape_modal_content(wait, base_xpath:str, relative_xpaths:dict)->dict:
             print(f"Error fetching {element_name}: {e}")
     return extracted_content
 
+
 def scrape_modal_data(driver, base_xpath:str, relative_xpaths:dict)->dict:
     """
     Extracts multiple values from a modal dialog using dynamic XPATHs.
 
-    :param driver: WebDriver instance used to control the browser
-    :param base_xpath: Base XPATH shared by all elements
-    :param relative_xpaths: Dictionary where keys are element names and values are XPATH templates for each element
-    :return: Dictionary where keys are element names and values are lists of extracted contents
+    Parameters:
+        driver: WebDriver instance used to control the browser
+        base_xpath: Base XPATH shared by all elements
+        relative_xpaths: Dictionary where keys are element names and values are XPATH templates for each element
+    Return
+        extracted_data: Dictionary where keys are element names and values are lists of extracted contents
     """
     extracted_data = {}
 
@@ -100,8 +109,15 @@ def scrape_modal_data(driver, base_xpath:str, relative_xpaths:dict)->dict:
     
     return extracted_data
 
+
 def configure_chrome_options():
-    """Configure Chrome WebDriver options."""
+    """
+    Configure Chrome WebDriver options.
+    Parameters:
+        None
+    Return:
+        options
+    """
     options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
     options.add_argument('--disable-gpu')
@@ -109,18 +125,46 @@ def configure_chrome_options():
     options.add_argument('--disable-dev-shm-usage')
     return options
 
+
 def load_country_codes(filepath='./data/raw/country_code.json':str)->dict:
-    """Load country codes from a JSON file."""
+    """
+    Load country codes from a JSON file.
+    Parameters:
+        filepath: File path of JSON file
+    Return:
+        result: Loaded json file as python dictionary
+
+    """
     with open(filepath, 'r', encoding='utf-8') as file:
-        return json.load(file)
+        result = json.load(file)
+        return result
+
 
 def initialize_driver():
-    """Initialize the Chrome WebDriver with options."""
+    """
+    Initialize the Chrome WebDriver with options.
+    Parameters:
+        None
+    Return:
+        driver: WebDriver instance used to control the browser
+    """
     options = configure_chrome_options()
-    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+    return driver
 
 def process_movie(driver, wait, country:str, country_code:str, rank:int):
-    """Process a single movie entry."""
+    """
+    Process a single movie entry.
+    Parameters:
+        driver: WebDriver instance used to control the browser
+        wait: WebDriverWait instance for setting timeout
+        country: country name from country_code dictionary
+        country_code: country code from country_code dictionary
+        rank: ranking of movie
+    Return:
+        content: merged data of movies
+    """
     content = {}
     try:
         print(f"Processing item {rank} for {country}({country_code})")
@@ -149,19 +193,29 @@ def process_movie(driver, wait, country:str, country_code:str, rank:int):
         log_error(country, rank, e)
     return content
 
+
 def log_error(country:str, rank:int, error:str):
-    """Log an error with contextual information."""
+    """
+    Log an error with contextual information.
+    Parameters:
+        country: country name from content dictionary
+        rank: ranking of the movie
+        error: error message from Exception code
+    Return 
+        None
+    """
     print(f"Error processing item {rank} for {country}: {error}")
 
-def measure_time(func, *args, **kwargs):
-    """Measure and print the execution time of a function."""
-    start_time = time.time()
-    result = func(*args, **kwargs)
-    elapsed_time = time.time() - start_time
-    print(f"Execution time: {elapsed_time:.2f} seconds.")
-    return result
 
 def save_dict_as_json(data, file_path):
+    """
+    Save dictionary as json file.
+    Parameters: 
+        data: data to transform as json file
+        file_path: where to save json file
+    Return
+        None
+    """
     try:
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
@@ -169,9 +223,14 @@ def save_dict_as_json(data, file_path):
     except Exception as e:
         print(f"An error occured:{e}")
 
-def crawling(top_n=10:int)->dict:
-    """Main crawling function.
-    자동으로 movies_data.json 중간저장
+
+def crawling(top_n=10:int)->list(dict):
+    """
+    Main crawling function.
+    Parameters:
+        top_n: How many movies to crawl from the website.
+    Return:
+        result: list of dictionary
     """
     result = {"movies": []}
     country_code_dict = load_country_codes()
