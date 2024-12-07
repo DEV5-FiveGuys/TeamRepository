@@ -3,7 +3,7 @@ import logging
 from django.db import transaction
 from .models import Movie, Genre, Actor, Country, Ranking, MovieGenre, MovieActor
 
-def save_movies_from_json(parsed_data):
+def save_movies_from_json(parsed_data: list) -> dict:
     """
     JSON 데이터를 파싱하여 Django 데이터베이스에 저장하는 함수.
     중복 데이터 및 업데이트된 데이터를 반환.

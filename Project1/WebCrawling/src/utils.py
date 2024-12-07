@@ -28,14 +28,64 @@ ELEMENTS_PATH = {
     'genre': '/div[1]/div[2]/ul[2]/li[{}]',
     'stars': '/div[3]/div/ul/li[{}]'
 }
+
 CLOSE_BUTTON_XPATH = '/html/body/div[4]/div[2]/div/div[1]/button'
 BUTTON_XPATH_TEMPLATE = (
     '//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/'
     'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
 )
 
+def load_country_codes(filepath='./data/raw/country_code.json'):
+    """Load country codes from a JSON file."""
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return json.load(file)
+
+def initialize_driver():
+    """Initialize the Chrome WebDriver with options."""
+    options = configure_chrome_options()
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+def configure_chrome_options():
+    """Configure Chrome WebDriver options."""
+    options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    return options
 
 
+
+
+def process_movie(driver, wait, country, country_code, rank):
+    """Process a single movie entry."""
+    content = {}
+    try:
+        print(f"Processing item {rank} for {country}({country_code})")
+        
+        # 버튼 클릭
+        button_xpath = BUTTON_XPATH_TEMPLATE.format(rank)
+        click_button(driver, wait, button_xpath)
+        time.sleep(0.5)
+
+        # 콘텐츠 크롤링 -> img_url, 제목, 개봉년도, 평점, 요약
+        content = scrape_modal_content(wait, BASE_XPATH, RELATIVE_XPATHS)
+
+        # 국가 추가
+        content['country'] = country
+
+        # 추가 데이터 -> 장르, 출연진
+        content.update(scrape_modal_data(driver, BASE_XPATH, ELEMENTS_PATH))
+
+        # 순위 추가
+        content['rank'] = rank
+
+        # 모달 닫기
+        click_button(driver, wait, CLOSE_BUTTON_XPATH)
+        time.sleep(0.5)
+    except Exception as e:
+        log_error(country, rank, e)
+    return content
 
 def click_button(driver, wait, xpath:str):
     """
@@ -48,9 +98,6 @@ def click_button(driver, wait, xpath:str):
     """
     button = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
     ActionChains(driver).click(button).perform()
-
-
-
 
 def scrape_modal_content(wait, base_xpath:str, relative_xpaths:dict)->dict:
     """
@@ -78,9 +125,6 @@ def scrape_modal_content(wait, base_xpath:str, relative_xpaths:dict)->dict:
         except Exception as e:
             print(f"Error fetching {element_name}: {e}")
     return extracted_content
-
-
-
 
 def scrape_modal_data(driver, base_xpath:str, relative_xpaths:dict)->dict:
     """
@@ -111,86 +155,9 @@ def scrape_modal_data(driver, base_xpath:str, relative_xpaths:dict)->dict:
     
     return extracted_data
 
-
-
-
-def configure_chrome_options():
-    """Configure Chrome WebDriver options."""
-    options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    return options
-
-
-
-
-def load_country_codes(filepath='./data/raw/country_code.json'):
-    """Load country codes from a JSON file."""
-    with open(filepath, 'r', encoding='utf-8') as file:
-        return json.load(file)
-
-
-
-
-def initialize_driver():
-    """Initialize the Chrome WebDriver with options."""
-    options = configure_chrome_options()
-    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
-
-
-
-def process_movie(driver, wait, country, country_code, rank):
-    """Process a single movie entry."""
-    content = {}
-    try:
-        print(f"Processing item {rank} for {country}({country_code})")
-        
-        # 버튼 클릭
-        button_xpath = BUTTON_XPATH_TEMPLATE.format(rank)
-        click_button(driver, wait, button_xpath)
-        time.sleep(0.5)
-
-        # 콘텐츠 크롤링
-        content = scrape_modal_content(wait, BASE_XPATH, RELATIVE_XPATHS)
-
-        # 국가 추가
-        content['country'] = country
-
-        # 추가 데이터 크롤링
-        content.update(scrape_modal_data(driver, BASE_XPATH, ELEMENTS_PATH))
-
-        # 순위 추가
-        content['rank'] = rank
-
-        # 모달 닫기
-        click_button(driver, wait, CLOSE_BUTTON_XPATH)
-        time.sleep(0.5)
-    except Exception as e:
-        log_error(country, rank, e)
-    return content
-
-
-
-
 def log_error(country, rank, error):
     """Log an error with contextual information."""
     print(f"Error processing item {rank} for {country}: {error}")
-
-
-
-
-def measure_time(func, *args, **kwargs):
-    """Measure and print the execution time of a function."""
-    start_time = time.time()
-    result = func(*args, **kwargs)
-    elapsed_time = time.time() - start_time
-    print(f"Execution time: {elapsed_time:.2f} seconds.")
-    return result
-
-
 
 
 def save_dict_as_json(data, file_path):
@@ -202,6 +169,27 @@ def save_dict_as_json(data, file_path):
         print(f"An error occured:{e}")
 
 
+def transform_content_to_result(content:dict[str,any], country:str) -> dict[str,any]: 
+    """
+    결과를 요구된 JSON 구조에 맞게 변환하는 함수입니다.
+    
+    :param content: 모달에서 추출한 콘텐츠 (dictionary)
+    :param country: 영화가 속한 국가 (string)
+    :return: 변환된 JSON 구조 (dictionary)
+    """
+    return {
+        "country": country,
+        "movie": {
+            "title": content.get("title"),
+            "release_year": content.get("year"),
+            "score": content.get("score"),
+            "summary": content.get("summary"),
+            "image_url": content.get("img"),
+            "genres": content.get("genre", []),
+            "actors": content.get("stars", [])
+        },
+        "rank": content["rank"]
+    }
 
 
 def crawling(top_n=10):
@@ -221,20 +209,11 @@ def crawling(top_n=10):
             for i in range(1, top_n + 1):
                 content = process_movie(driver, wait, country, country_code, i)
                 if content:
-                    # 결과 추가 (요구된 JSON 구조에 맞게 변환)
-                    result["movies"].append({
-                        "country": country,
-                        "movie": {
-                            "title": content.get("title"),
-                            "release_year": content.get("year"),
-                            "score": content.get("score"),
-                            "summary": content.get("summary"),
-                            "image_url": content.get("img"),
-                            "genres": content.get("genre", []),
-                            "actors": content.get("stars", [])
-                        },
-                        "rank": content["rank"]
-                    })
+                    # transform_content_to_result 함수를 사용하여 결과 추가
+                    result["movies"].append(transform_content_to_result(content, country))
         save_at = f'./data/raw/movies_data_{today_date}.json'
         save_dict_as_json(result, save_at)
     return result
+
+
+
