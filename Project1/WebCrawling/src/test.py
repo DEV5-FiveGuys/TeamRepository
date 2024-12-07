@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from Crawling import MovieCrawler  # Crawling.py에 있는 MovieCrawler 클래스 임포트
+from .utils_backup import MovieCrawler  # Crawling.py에 있는 MovieCrawler 클래스 임포트
 
 class TestMovieCrawler(unittest.TestCase):
     def setUp(self):

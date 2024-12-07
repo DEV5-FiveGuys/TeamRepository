@@ -6,7 +6,7 @@
                 "title": "오징어 게임",
                 "release_year": "2021–2025",
                 "score": "8.0",
-                "summary": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes: a survival game that has a whopping 45.6 billion-won prize at stake.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYTYzMTlmNDctNmVkNS00YzRlLWE5MjAtODdjZWRkYzRlNWVlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Action",
@@ -26,7 +26,7 @@
             "movie": {
                 "title": "Ji-geum Geo-sin Jeon-hwa-neun",
                 "release_year": "2024",
-                "score": "8.2",
+                "score": "8.1",
                 "summary": "Baek Sa Eon, a former presidential spokesman, marries Hong Hui Ju, a mute newspaper heiress, in an arranged union. When Hui Ju is kidnapped, their distant relationship is challenged as they navigate the crisis.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZWMyMjRkYzMtZDMyNS00ZTEwLTg3ZmMtYTljZDMxMjg2MjNhXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
                 "genres": [
@@ -68,7 +68,7 @@
                 "title": "Oldeuboi",
                 "release_year": "2003",
                 "score": "8.3",
-                "summary": "",
+                "summary": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must track down his captor in five days.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Action",
@@ -110,7 +110,7 @@
                 "title": "Teu-reong-keu",
                 "release_year": "2024",
                 "score": "7.2",
-                "summary": "",
+                "summary": "A secret marriage service is uncovered when a trunk washes up on the shore, revealing the strange marriage between a couple in the thick of it all.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMDRkNGFkNjAtMDE1Yy00ZDRlLWEyYjEtYTBkNzBmZjAwZDk5XkEyXkFqcGc@._V1_QL75_UY107_CR17,0,72,107_.jpg",
                 "genres": [
                     "Drama",
@@ -214,7 +214,7 @@
                 "title": "아케인",
                 "release_year": "2021–2024",
                 "score": "9.0",
-                "summary": "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League of Legends champions and the power that will tear them apart.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNDQ0OTNiNzYtZWJlZS00Nzg1LWJjZDAtMWNiNzBjZDMzMjQwXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Animation",
@@ -256,18 +256,14 @@
                 "title": "Gladiator II",
                 "release_year": "2024",
                 "score": "6.9",
-                "summary": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNGFlMDE4MDQtNGRmMS00YThmLWFkYmUtOTZhMDdjOGMxNzk0XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Adventure",
                     "Drama"
                 ],
-                "actors": [
-                    "Ridley Scott",
-                    "Denzel Washington",
-                    "Pedro Pascal"
-                ]
+                "actors": []
             },
             "rank": 3
         },
@@ -277,7 +273,7 @@
                 "title": "A Man on the Inside",
                 "release_year": "2024",
                 "score": "7.8",
-                "summary": null,
+                "summary": "Charles, a retired man, gets a new lease on life when he answers an ad from a private investigator and becomes a mole in a secret investigation in a nursing home.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYzgwOGIwZjAtZTg0OS00ZGRkLTgxMjUtMjU2NDA2Yjc4NTc1XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
                     "Comedy",
@@ -396,20 +392,20 @@
         {
             "country": "United States",
             "movie": {
-                "title": "The Day of the Jackal",
-                "release_year": "2024",
-                "score": "8.2",
-                "summary": "The Jackal is an elusive assassin who makes his living carrying out hits for the highest fee. He soon meets his match in a tenacious British intelligence officer who tracks him down in a thrilling cat-and-mouse chase across Europe.",
-                "image_url": "https://m.media-amazon.com/images/M/MV5BYmI3NDY1MGYtNTJmNy00NjA3LTk1OWUtM2IyN2M3MjFiMTZkXkEyXkFqcGc@._V1_QL75_UY107_CR4,0,72,107_.jpg",
+                "title": "글래디에이터",
+                "release_year": "2000",
+                "score": "8.5",
+                "summary": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNTE3MjU5ZTYtZmUzMy00MDdlLTllODktOGFjMTBhNDIxODk2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
-                    "Crime",
-                    "Drama",
-                    "Thriller"
+                    "Action",
+                    "Adventure",
+                    "Drama"
                 ],
                 "actors": [
-                    "Eddie Redmayne",
-                    "Lashana Lynch",
-                    "Eleanor Matsuura"
+                    "Ridley Scott",
+                    "Joaquin Phoenix",
+                    "Connie Nielsen"
                 ]
             },
             "rank": 10
@@ -583,7 +579,7 @@
                 "title": "Conclave",
                 "release_year": "2024",
                 "score": "7.4",
-                "summary": null,
+                "summary": "When Cardinal Lawrence is tasked with leading one of the world's most secretive and ancient events, selecting a new Pope, he finds himself at the center of a conspiracy that could shake the very foundation of the Catholic Church.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYjgxMDI5NmMtNTU3OS00ZDQxLTgxZmEtNzY1ZTBmMDY4NDRkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Drama",
@@ -666,14 +662,18 @@
                 "title": "Furiosa: A Mad Max Saga",
                 "release_year": "2024",
                 "score": "7.5",
-                "summary": "",
+                "summary": "The origin story of renegade warrior Furiosa before her encounter and teamup with Mad Max.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BOTE4OTlkOWUtMWUwZC00ZWNhLTkxY2EtNTYxMzY3YWE3NzRjXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Adventure",
                     "Sci-Fi"
                 ],
-                "actors": []
+                "actors": [
+                    "George Miller",
+                    "Chris Hemsworth",
+                    "Tom Burke"
+                ]
             },
             "rank": 3
         },
@@ -703,7 +703,7 @@
                 "title": "The Fall Guy",
                 "release_year": "2024",
                 "score": "6.9",
-                "summary": "",
+                "summary": "A stuntman, fresh off an almost career-ending accident, has to track down a missing movie star, solve a conspiracy and try to win back the love of his life while still doing his day job. What could possibly go right?",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BOWU1MDU4MWEtMGEwZS00NmE0LWI1OTYtYjU0NGRhYWZkNWM5XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Action",
@@ -724,7 +724,7 @@
                 "title": "Return to Paradise",
                 "release_year": "2024",
                 "score": "6.8",
-                "summary": null,
+                "summary": "Detective Inspector Mackenzie Clarke reluctantly returns to her Australian hometown after leaving her fiancé, only to be pulled into a case testing her tenacity until the culprit is apprehended.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BOWYzOTQ1ZjctOWQ1YS00ZmMxLTkxMTktY2Q3Y2M2ZTMxY2FiXkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
                     "Drama"
@@ -837,7 +837,7 @@
                 "actors": [
                     "Vicente Amorim",
                     "Gabriel Leone",
-                    "Matt Mella"
+                    "Patrick Kennedy"
                 ]
             },
             "rank": 1
@@ -889,13 +889,17 @@
                 "title": "콜 미 바이 유어 네임",
                 "release_year": "2017",
                 "score": "7.8",
-                "summary": "",
+                "summary": "It's the summer of 1983, and 17-year-old Elio is spending the days with his family at their villa in Lombardy, Italy. He soon meets Oliver, who's working as an intern for Elio's father. They discover the heady beauty of awakening desire.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNjBkNzU1MjktYjI2NC00MTNkLWIyZmEtMGEzODkxYzUxZWZjXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Drama",
                     "Romance"
                 ],
-                "actors": []
+                "actors": [
+                    "Luca Guadagnino",
+                    "Armie Hammer",
+                    "Michael Stuhlbarg"
+                ]
             },
             "rank": 4
         },
@@ -1132,7 +1136,7 @@
             "movie": {
                 "title": "Street Trash",
                 "release_year": "2024",
-                "score": "4.3",
+                "score": "4.4",
                 "summary": "A group of homeless misfits must fight for survival when they discover a plot to exterminate every homeless person in the city.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BODI5NzRkZDctYzA3ZC00OWM0LWE0NGMtZTE0MzgxZjJlZjQ2XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
@@ -1152,7 +1156,7 @@
                 "title": "District 9",
                 "release_year": "2009",
                 "score": "7.9",
-                "summary": "",
+                "summary": "In a future Earth in which aliens are isolated in a remote ghetto, a government agent finds himself banished there.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMTM4OTI1OTM5NF5BMl5BanBnXkFtZTcwMzk5MTU1Mg@@._V1_QL75_UY107_CR0,0,72,107_.jpg",
                 "genres": [
                     "Action",
