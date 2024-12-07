@@ -203,19 +203,19 @@ class IMDBMovieCrawler:
         try:
             print(f"Processing item {rank} for {country}({country_code})")
             # 버튼 클릭
-            button_xpath = BUTTON_XPATH_TEMPLATE.format(rank)
-            click_button(driver, wait, button_xpath)
+            button_xpath = self.BUTTON_XPATH_TEMPLATE.format(rank)
+            self.click_button(driver, wait, button_xpath)
             time.sleep(0.5)
             # 콘텐츠 크롤링 -> img_url, 제목, 개봉년도, 평점, 요약
-            content = scrape_modal_content(wait, BASE_XPATH, RELATIVE_XPATHS)
+            content = self.scrape_modal_content(wait, self.BASE_XPATH, self.RELATIVE_XPATHS)
             # 국가 추가
             content['country'] = country
             # 추가 데이터 -> 장르, 출연진
-            content.update(scrape_modal_data(driver, BASE_XPATH, ELEMENTS_PATH))
+            content.update(self.scrape_modal_data(driver, self.BASE_XPATH, self.ELEMENTS_PATH))
             # 순위 추가
             content['rank'] = rank
             # 모달 닫기
-            click_button(driver, wait, CLOSE_BUTTON_XPATH)
+            self.click_button(driver, wait, self.CLOSE_BUTTON_XPATH)
             time.sleep(0.5)
         except Exception as e:
             self.log_error(country, rank, e)
