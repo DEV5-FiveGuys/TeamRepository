@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}영화 데이터베이스{% endblock %}</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -11,17 +12,12 @@
         <h1>영화 데이터베이스</h1>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">홈</a></li>
+                <li><a href="{% url 'movie_list' %}">홈</a></li>  <!-- 'home'을 'movie_list'로 변경 -->
                 <li><a href="{% url 'movie_list' %}">영화 목록</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-    <footer>
-        © 2024 영화 데이터베이스
-    </footer>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
