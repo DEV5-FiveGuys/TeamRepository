@@ -7,6 +7,7 @@ from rest_framework import status
 from db_storage.utils import *  # utils.py에서 함수 호출
 from db_storage.models import *
 from visualizations.visualizer import Visualizer
+from django.shortcuts import render, get_object_or_404
 
 JSON_PATH = '../WebCrawling/data/raw/movies_data_country.json'
 logger = logging.getLogger(__name__)
@@ -81,4 +82,12 @@ class GetMovieListByCountryAPIView(APIView):
         except Exception as e:
            return Response(
                 {"error": f"An error occurred: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            ) 
+            )
+
+def movie_list(request):
+    movies = Movie.objects.all()
+    return render(request, 'index.html', {'movies': movies})
+
+def movie_details(request, movie_id):
+    movie = get_object_or_404(Movie, id=movie_id)
+    return render(request, 'movie_details.html', {'movie': movie})
