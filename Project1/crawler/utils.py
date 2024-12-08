@@ -131,7 +131,7 @@ class MovieCrawler:
             '//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/'
             'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
         )
-        self.save_at:Final = './crawler/data/movies_data_country.json'
+        self.save_at:Final = './crawler/data/raw/movies_data_country.json'
         self.country_codes_filepath = country_codes_filepath
         self.top_n = top_n
         
@@ -315,8 +315,7 @@ class MovieCrawler:
                 continue  # 드라이버 관련 문제가 있으면 현재 국가 건너뛰기
 
         try:
-            save_at = './crawler/data/raw/movies_dat_country.json'
-            self.save_dict_as_json(result, save_at)
+            self.save_dict_as_json(result, self.save_at)
         except Exception as e:
             print(f"결과 저장 중 오류 발생: {e}")
 
