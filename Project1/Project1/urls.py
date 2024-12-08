@@ -20,4 +20,5 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('db_storage.urls')),
+    path('', include('db_storage.urls')),  # 기본 경로를 db_storage 앱으로 연결
 ]
