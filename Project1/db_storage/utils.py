@@ -42,7 +42,7 @@ def save_movies_from_json(parsed_data: list) -> dict:
                 movie_info = movie_data['movie']
                 # score null 처리
                 score = movie_info.get('score', 0.0)
-                if not score or score == 'null':
+                if score or score == 'null':
                     score = Decimal(0)
                 movie, created = Movie.objects.get_or_create(
                     title=movie_info['title'],
@@ -66,7 +66,7 @@ def save_movies_from_json(parsed_data: list) -> dict:
                         updated_fields.append('release_year')
                     # 소수점 1자리까지 반올림하여 비교 => float형 부동소수점 비교때문에
                     # 에러 있어서 round 삭제
-                    if movie.score != score:
+                    if Decimal(movie.score) != Decimal(score):
                         movie.score = score
                         updated_fields.append('score')
                     if movie.summary != movie_info.get('summary', ''):
