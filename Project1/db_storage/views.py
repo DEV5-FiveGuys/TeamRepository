@@ -82,7 +82,31 @@ class GetMovieListByCountryAPIView(APIView):
         except Exception as e:
            return Response(
                 {"error": f"An error occurred: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            ) 
+        
+def visualize_country_movies(request, country_name):
+    # 국가별 영화 데이터를 가져옵니다.
+    movies = get_movies_by_country_name(country_name)
+    
+    # 시각화 객체를 생성합니다.
+    visualizer = Visualizer(country_name
+    =country_name)
+    
+    # 각종 시각화를 수행합니다.
+    top_k_html = visualizer.visualize_TOPK(k=5)
+    wordcloud_html = visualizer.visualize_wordcloud(display_type='html', colormap='magma')
+    piechart_html = visualizer.visualize_piechart(k=8)
+    average_rating_html = visualizer.visualize_average_rating()
+    
+    # 생성된 HTML을 템플릿에 전달합니다.
+    context = {
+        'top_k_html': top_k_html,
+        'wordcloud_html': wordcloud_html,
+        'piechart_html': piechart_html,
+        'average_rating_html': average_rating_html
+    }
+    
+    return render(request, 'visualizations/country_movies.html', context)
 
 def movie_list(request):
     movies = Movie.objects.all()
