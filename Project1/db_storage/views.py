@@ -32,20 +32,22 @@ class BulkInsertRankingView(APIView):
             duplicate_movies = result['duplicate_movies']
             updated_movies = result['updated_movies']
             
+            # 응답 메시지 구성
+            message = "Movies processed successfully."
             if not saved_movies:
-                return Response({"error": "Empty saved_movies."}, status=status.HTTP_400_BAD_REQUEST)
-            else:
-                return Response({
-                    "message": f"{len(saved_movies)} movies saved successfully.",
-                    "details": {
-                        "saved_movies_count": len(saved_movies),
-                        "duplicate_movies_count": len(duplicate_movies),
-                        "updated_movies_count": len(updated_movies),
-                    },
-                    "saved_movies": [movie.title for movie in saved_movies],
-                    "duplicate_movies": [movie.title for movie in duplicate_movies],
-                    "updated_movies": [movie.title for movie in updated_movies],
-                }, status=status.HTTP_201_CREATED)
+                message += " No new movies were saved."
+            
+            return Response({
+                "message": message,
+                "details": {
+                    "saved_movies_count": len(saved_movies),
+                    "duplicate_movies_count": len(duplicate_movies),
+                    "updated_movies_count": len(updated_movies),
+                },
+                "saved_movies": [movie.title for movie in saved_movies],
+                "duplicate_movies": [movie.title for movie in duplicate_movies],
+                "updated_movies": [movie.title for movie in updated_movies],
+            }, status=status.HTTP_201_CREATED)
 
         except FileNotFoundError:
             logger.error("JSON file not found.")
