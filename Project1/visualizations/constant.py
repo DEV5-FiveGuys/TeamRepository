@@ -21,4 +21,4 @@ STOPWORDS: Final = {
 }
 
 # html path
-HTML_PATH: Final = './html/'
+HTML_PATH: Final = 'db_storage/html/'
