@@ -1,0 +1,829 @@
+{
+    "movies": [
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "오징어 게임",
+                "release_year": "2021–2025",
+                "score": "8.0",
+                "summary": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes: a survival game that has a whopping 45.6 billion-won prize at stake.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYTYzMTlmNDctNmVkNS00YzRlLWE5MjAtODdjZWRkYzRlNWVlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Drama",
+                    "Mystery"
+                ],
+                "actors": [
+                    "Lee Jung-jae",
+                    "Park Hae-soo",
+                    "Nandito Hidayattullah Putra"
+                ]
+            },
+            "rank": 1
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Ji-geum Geo-sin Jeon-hwa-neun",
+                "release_year": "2024",
+                "score": "8.1",
+                "summary": "Baek Sa Eon, a former presidential spokesman, marries Hong Hui Ju, a mute newspaper heiress, in an arranged union. When Hui Ju is kidnapped, their distant relationship is challenged as they navigate the crisis.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BZWMyMjRkYzMtZDMyNS00ZTEwLTg3ZmMtYTljZDMxMjg2MjNhXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Mystery",
+                    "Romance"
+                ],
+                "actors": [
+                    "Yoo Yeon-seok",
+                    "Chae Soo-bin",
+                    "Heo Nam-jun"
+                ]
+            },
+            "rank": 2
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Gisaengchung",
+                "release_year": "2019",
+                "score": "8.5",
+                "summary": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Bong Joon Ho",
+                    "Lee Sun-kyun",
+                    "Cho Yeo-jeong"
+                ]
+            },
+            "rank": 3
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Oldeuboi",
+                "release_year": "2003",
+                "score": "8.3",
+                "summary": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must track down his captor in five days.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Drama",
+                    "Mystery"
+                ],
+                "actors": [
+                    "Park Chan-wook",
+                    "Yoo Ji-tae",
+                    "Kang Hye-jeong"
+                ]
+            },
+            "rank": 4
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Gangnam Bi-Saideu",
+                "release_year": "2024",
+                "score": "7.3",
+                "summary": "In Gangnam, Seoul, Jae-Hee knows a secret about a series of disappearances but then vanishes herself. Detective Kang, outlaw Yoon, and Prosecutor Min pursue the truth for their own reasons.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNjgwYmJhYjgtYzJhYi00NmU5LWE1ZjEtOWRjOWJkN2M3MTU2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Crime",
+                    "Drama"
+                ],
+                "actors": [
+                    "Jo Woo-jin",
+                    "Ji Chang-wook",
+                    "Ha Yoon-kyung"
+                ]
+            },
+            "rank": 5
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Teu-reong-keu",
+                "release_year": "2024",
+                "score": "7.2",
+                "summary": "A secret marriage service is uncovered when a trunk washes up on the shore, revealing the strange marriage between a couple in the thick of it all.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMDRkNGFkNjAtMDE1Yy00ZDRlLWEyYjEtYTBkNzBmZjAwZDk5XkEyXkFqcGc@._V1_QL75_UY107_CR17,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Mystery",
+                    "Romance"
+                ],
+                "actors": [
+                    "Seo Hyeon-jin",
+                    "Gong Yoo",
+                    "Jung Yun-Ha"
+                ]
+            },
+            "rank": 6
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Salinui chueok",
+                "release_year": "2003",
+                "score": "8.1",
+                "summary": "In a small Korean province in 1986, two detectives struggle with the case of multiple young women being found raped and murdered by an unknown culprit.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BOGI1Y2MyNTItNjFiZC00ZTlkLTgwNTctMDI0MGEzZGMxMjExXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Crime",
+                    "Drama",
+                    "Mystery"
+                ],
+                "actors": [
+                    "Bong Joon Ho",
+                    "Kim Sang-kyung",
+                    "Kim Roe-ha"
+                ]
+            },
+            "rank": 7
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Mr. Peullangkeuton",
+                "release_year": "2024",
+                "score": "8.1",
+                "summary": "A man with little chance for happiness and his ex, the unhappiest bride-to-be, are forced to accompany one another on the final journey of his life.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNzNkMzNmZjAtNTM2Ni00OGNkLTk2MzQtZWU3ZDMwNjUzYTZkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Comedy",
+                    "Romance"
+                ],
+                "actors": [
+                    "Woo Do-Hwan",
+                    "Lee Yoo-mi",
+                    "Oh Jung-se"
+                ]
+            },
+            "rank": 8
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Ore dake Level Up na Ken",
+                "release_year": "2024",
+                "score": "8.3",
+                "summary": "Follows the adventures of Sung Jinwoo in a world that is constantly threatened by monsters and evil forces. In his battles Sung transforms himself from the weakest hunter of all mankind to one of the strongest hunters in existence.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BM2M4YzdkMTEtMjUyYy00ZWY0LWI5ODQtNGRkZWQ1MzU5MWM2XkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
+                "genres": [
+                    "Animation",
+                    "Action",
+                    "Adventure"
+                ],
+                "actors": [
+                    "Chugong",
+                    "Aleks Le",
+                    "Min Seung-woo"
+                ]
+            },
+            "rank": 9
+        },
+        {
+            "country": "South Korea",
+            "movie": {
+                "title": "Ahgassi",
+                "release_year": "2016",
+                "score": "8.1",
+                "summary": "In 1930s Korea, a girl is hired as a handmaiden to a Japanese heiress who lives a secluded life on a countryside estate. But the maid has a secret: She is a pickpocket recruited by a swindler to help seduce the Lady and steal her fortune.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BZjIwMjVjNmEtZGY4Ni00MjFlLTgwZTMtYTVlNWFjNTE0M2FjXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Romance",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Park Chan-wook",
+                    "Ha Jung-woo",
+                    "Cho Jin-woong"
+                ]
+            },
+            "rank": 10
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "아케인",
+                "release_year": "2021–2024",
+                "score": "9.0",
+                "summary": "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League of Legends champions and the power that will tear them apart.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNDQ0OTNiNzYtZWJlZS00Nzg1LWJjZDAtMWNiNzBjZDMzMjQwXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Animation",
+                    "Action",
+                    "Adventure"
+                ],
+                "actors": [
+                    "Kevin Alejandro",
+                    "Hailee Steinfeld",
+                    "Ella Purnell"
+                ]
+            },
+            "rank": 1
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "Wicked: Part I",
+                "release_year": "2024",
+                "score": "8.1",
+                "summary": "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMGNhMWFmZGUtODRmYy00MzljLWEwYWEtNzBhODg0MTkzZWNlXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
+                "genres": [
+                    "Fantasy",
+                    "Musical",
+                    "Romance"
+                ],
+                "actors": [
+                    "Jon M. Chu",
+                    "Ariana Grande",
+                    "Jeff Goldblum"
+                ]
+            },
+            "rank": 2
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "Gladiator II",
+                "release_year": "2024",
+                "score": "6.9",
+                "summary": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNGFlMDE4MDQtNGRmMS00YThmLWFkYmUtOTZhMDdjOGMxNzk0XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Drama"
+                ],
+                "actors": [
+                    "Ridley Scott",
+                    "Denzel Washington",
+                    "Pedro Pascal"
+                ]
+            },
+            "rank": 3
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "A Man on the Inside",
+                "release_year": "2024",
+                "score": "7.8",
+                "summary": "Charles, a retired man, gets a new lease on life when he answers an ad from a private investigator and becomes a mole in a secret investigation in a nursing home.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYzgwOGIwZjAtZTg0OS00ZGRkLTgxMjUtMjU2NDA2Yjc4NTc1XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
+                "genres": [
+                    "Comedy",
+                    "Crime"
+                ],
+                "actors": [
+                    "Ted Danson",
+                    "Mary Elizabeth Ellis",
+                    "Lilah Richcreek Estrada"
+                ]
+            },
+            "rank": 4
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "From",
+                "release_year": "2022",
+                "score": "7.8",
+                "summary": "Unravel the mystery of a city in middle U.S.A. that imprisons everyone who enters. As the residents struggle to maintain a sense of normality and seek a way out, they must also survive the threats of the surrounding forest.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYzM5ZWMxOGEtZjEyMC00YjQ0LThiYjEtZjVkZGEzN2NlOGEwXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Horror",
+                    "Mystery"
+                ],
+                "actors": [
+                    "John Griffin",
+                    "Catalina Sandino Moreno",
+                    "Eion Bailey"
+                ]
+            },
+            "rank": 5
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "Yellowstone",
+                "release_year": "2018",
+                "score": "8.7",
+                "summary": "A ranching family in Montana faces off against others encroaching on their land.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYzE2ODQ0NmQtYmMxMS00MGRlLTgwOGEtYjRkN2FkYmZlN2JlXkEyXkFqcGc@._V1_QL75_UX72_CR0,2,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Western"
+                ],
+                "actors": [
+                    "John Linson",
+                    "Taylor Sheridan",
+                    "Kelly Reilly"
+                ]
+            },
+            "rank": 6
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "Dune: Prophecy",
+                "release_year": "2024",
+                "score": "7.4",
+                "summary": "Two Harkonnen sisters combat forces that threaten the future of humankind and establish the fabled sect that will become known as the Bene Gesserit.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BOTc2YTFiOTItZmRiNi00OWE5LThhOTEtMmZhMTkzYmRiNjIxXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Drama"
+                ],
+                "actors": [
+                    "Diane Ademu-John",
+                    "Alison Schapker",
+                    "Shalom Brune-Franklin"
+                ]
+            },
+            "rank": 7
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "Landman",
+                "release_year": "2024",
+                "score": "8.2",
+                "summary": "A modern-day tale of fortune seeking in the world of West Texas oil rigs.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNTRkY2ZkNzUtMzBlNC00NTc0LWE0ZDQtMWZiNGU5OWEyZGU4XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Drama"
+                ],
+                "actors": [
+                    "Taylor Sheridan",
+                    "Christian Wallace",
+                    "Jacob Lofland"
+                ]
+            },
+            "rank": 8
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "Moana 2",
+                "release_year": "2024",
+                "score": "7.1",
+                "summary": "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BZDUxNThhYTUtYjgxNy00MGQ4LTgzOTEtZjg1YTU5NTcwNThlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Animation",
+                    "Adventure",
+                    "Comedy"
+                ],
+                "actors": [
+                    "David G. Derrick Jr.",
+                    "Jason Hand",
+                    "Dana Ledoux Miller"
+                ]
+            },
+            "rank": 9
+        },
+        {
+            "country": "United States",
+            "movie": {
+                "title": "The Day of the Jackal",
+                "release_year": "2024",
+                "score": "8.2",
+                "summary": "The Jackal is an elusive assassin who makes his living carrying out hits for the highest fee. He soon meets his match in a tenacious British intelligence officer who tracks him down in a thrilling cat-and-mouse chase across Europe.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYmI3NDY1MGYtNTJmNy00NjA3LTk1OWUtM2IyN2M3MjFiMTZkXkEyXkFqcGc@._V1_QL75_UY107_CR4,0,72,107_.jpg",
+                "genres": [
+                    "Crime",
+                    "Drama",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Eddie Redmayne",
+                    "Lashana Lynch",
+                    "Eleanor Matsuura"
+                ]
+            },
+            "rank": 10
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Wicked: Part I",
+                "release_year": "2024",
+                "score": "8.1",
+                "summary": "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMGNhMWFmZGUtODRmYy00MzljLWEwYWEtNzBhODg0MTkzZWNlXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
+                "genres": [
+                    "Fantasy",
+                    "Musical",
+                    "Romance"
+                ],
+                "actors": [
+                    "Jon M. Chu",
+                    "Ariana Grande",
+                    "Jeff Goldblum"
+                ]
+            },
+            "rank": 1
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Gladiator II",
+                "release_year": "2024",
+                "score": "6.9",
+                "summary": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNGFlMDE4MDQtNGRmMS00YThmLWFkYmUtOTZhMDdjOGMxNzk0XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Drama"
+                ],
+                "actors": [
+                    "Ridley Scott",
+                    "Denzel Washington",
+                    "Pedro Pascal"
+                ]
+            },
+            "rank": 2
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "The Day of the Jackal",
+                "release_year": "2024",
+                "score": "8.2",
+                "summary": "The Jackal is an elusive assassin who makes his living carrying out hits for the highest fee. He soon meets his match in a tenacious British intelligence officer who tracks him down in a thrilling cat-and-mouse chase across Europe.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYmI3NDY1MGYtNTJmNy00NjA3LTk1OWUtM2IyN2M3MjFiMTZkXkEyXkFqcGc@._V1_QL75_UY107_CR4,0,72,107_.jpg",
+                "genres": [
+                    "Crime",
+                    "Drama",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Eddie Redmayne",
+                    "Lashana Lynch",
+                    "Eleanor Matsuura"
+                ]
+            },
+            "rank": 3
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "글래디에이터",
+                "release_year": "2000",
+                "score": "8.5",
+                "summary": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNTE3MjU5ZTYtZmUzMy00MDdlLTllODktOGFjMTBhNDIxODk2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Drama"
+                ],
+                "actors": [
+                    "Ridley Scott",
+                    "Joaquin Phoenix",
+                    "Connie Nielsen"
+                ]
+            },
+            "rank": 4
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Seobeuseuteonseu",
+                "release_year": "2024",
+                "score": "7.4",
+                "summary": "A fading celebrity takes a black-market drug: a cell-replicating substance that temporarily creates a younger, better version of herself.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_QL75_UY107_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Horror"
+                ],
+                "actors": [
+                    "Coralie Fargeat",
+                    "Margaret Qualley",
+                    "Dennis Quaid"
+                ]
+            },
+            "rank": 5
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Deadpool & Wolverine",
+                "release_year": "2024",
+                "score": "7.7",
+                "summary": "Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BZmU1ZTRmOTctODMyYy00NzRmLWEzNTQtYTIyM2JkOGE1ZTkxXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Comedy"
+                ],
+                "actors": [
+                    "Shawn Levy",
+                    "Hugh Jackman",
+                    "Emma Corrin"
+                ]
+            },
+            "rank": 6
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Deuraegon gildeuridagi",
+                "release_year": "2025",
+                "score": null,
+                "summary": "Follows a young Viking as he aspires to hunt dragons, and how he unexpectedly becomes a friend of a young dragon.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BOGU0ZWYzZmUtZDM5Yi00NjJlLTllNTctY2NiZWVkOTIzM2JlXkEyXkFqcGc@._V1_QL75_UX72_CR0,4,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Comedy"
+                ],
+                "actors": []
+            },
+            "rank": 7
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "왕좌의 게임",
+                "release_year": "2011–2019",
+                "score": "9.2",
+                "summary": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Drama"
+                ],
+                "actors": [
+                    "David Benioff",
+                    "D.B. Weiss",
+                    "Kit Harington"
+                ]
+            },
+            "rank": 8
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Conclave",
+                "release_year": "2024",
+                "score": "7.4",
+                "summary": "When Cardinal Lawrence is tasked with leading one of the world's most secretive and ancient events, selecting a new Pope, he finds himself at the center of a conspiracy that could shake the very foundation of the Catholic Church.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYjgxMDI5NmMtNTU3OS00ZDQxLTgxZmEtNzY1ZTBmMDY4NDRkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Drama",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Edward Berger",
+                    "Stanley Tucci",
+                    "John Lithgow"
+                ]
+            },
+            "rank": 9
+        },
+        {
+            "country": "United Kingdom",
+            "movie": {
+                "title": "Alien: Romulus",
+                "release_year": "2024",
+                "score": "7.2",
+                "summary": "While scavenging the deep ends of a derelict space station, a group of young space colonists come face to face with the most terrifying life form in the universe.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNDMyNzgzMjctYmI2NS00OWI3LWI2YjAtYWM4MWVjNGEzMWRkXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Horror",
+                    "Sci-Fi",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Fede Alvarez",
+                    "David Jonsson",
+                    "Archie Renaux"
+                ]
+            },
+            "rank": 10
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Alien: Romulus",
+                "release_year": "2024",
+                "score": "7.2",
+                "summary": "While scavenging the deep ends of a derelict space station, a group of young space colonists come face to face with the most terrifying life form in the universe.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNDMyNzgzMjctYmI2NS00OWI3LWI2YjAtYWM4MWVjNGEzMWRkXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Horror",
+                    "Sci-Fi",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Fede Alvarez",
+                    "David Jonsson",
+                    "Archie Renaux"
+                ]
+            },
+            "rank": 1
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Thanksgiving",
+                "release_year": "2023",
+                "score": "6.2",
+                "summary": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts - the birthplace of the infamous holiday.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYzhiZTkyM2UtNjU2MC00MjcxLWJhZGYtODQ0MDViN2UxMzAwXkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
+                "genres": [
+                    "Horror",
+                    "Mystery",
+                    "Thriller"
+                ],
+                "actors": [
+                    "Eli Roth",
+                    "Ty Olsson",
+                    "Gina Gershon"
+                ]
+            },
+            "rank": 2
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Furiosa: A Mad Max Saga",
+                "release_year": "2024",
+                "score": "7.5",
+                "summary": "The origin story of renegade warrior Furiosa before her encounter and teamup with Mad Max.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BOTE4OTlkOWUtMWUwZC00ZWNhLTkxY2EtNTYxMzY3YWE3NzRjXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Adventure",
+                    "Sci-Fi"
+                ],
+                "actors": [
+                    "George Miller",
+                    "Chris Hemsworth",
+                    "Tom Burke"
+                ]
+            },
+            "rank": 3
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Memoir of a Snail",
+                "release_year": "2024",
+                "score": "7.9",
+                "summary": "A bittersweet memoir of a melancholic woman called Grace Pudel - a hoarder of snails, romance novels, and guinea pigs.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMWQzMzE3ZTUtZmYxMy00NzAyLWIyMzEtZDFlNDgwNzI3MGJjXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Animation",
+                    "Drama"
+                ],
+                "actors": [
+                    "Adam Elliot",
+                    "Sarah Snook",
+                    "Charlotte Belsey"
+                ]
+            },
+            "rank": 4
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "The Fall Guy",
+                "release_year": "2024",
+                "score": "6.9",
+                "summary": "A stuntman, fresh off an almost career-ending accident, has to track down a missing movie star, solve a conspiracy and try to win back the love of his life while still doing his day job. What could possibly go right?",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BOWU1MDU4MWEtMGEwZS00NmE0LWI1OTYtYjU0NGRhYWZkNWM5XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Action",
+                    "Comedy",
+                    "Drama"
+                ],
+                "actors": [
+                    "David Leitch",
+                    "Emily Blunt",
+                    "Aaron Taylor-Johnson"
+                ]
+            },
+            "rank": 5
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Return to Paradise",
+                "release_year": "2024",
+                "score": "6.8",
+                "summary": "Detective Inspector Mackenzie Clarke reluctantly returns to her Australian hometown after leaving her fiancé, only to be pulled into a case testing her tenacity until the culprit is apprehended.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BOWYzOTQ1ZjctOWQ1YS00ZmMxLTkxMTktY2Q3Y2M2ZTMxY2FiXkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
+                "genres": [
+                    "Drama"
+                ],
+                "actors": [
+                    "James Hall",
+                    "Peter Mattessi",
+                    "Robert Thorogood"
+                ]
+            },
+            "rank": 6
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "폴라 익스프레스",
+                "release_year": "2004",
+                "score": "6.6",
+                "summary": "On Christmas Eve, a young boy embarks on a magical adventure to the North Pole on the Polar Express, while learning about friendship, bravery, and the spirit of Christmas.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMTM1NTU0NTE4MV5BMl5BanBnXkFtZTcwMTQ0MjEzMw@@._V1_QL75_UY107_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Animation",
+                    "Adventure",
+                    "Comedy"
+                ],
+                "actors": [
+                    "Robert Zemeckis",
+                    "Chris Coppola",
+                    "Michael Jeter"
+                ]
+            },
+            "rank": 7
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Better Man",
+                "release_year": "2024",
+                "score": "6.8",
+                "summary": "A singular profile of British pop superstar Robbie Williams.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BYWU3YzU0NTItMGVlYi00YTFmLWE5MmQtNjg4ODQ3ZWYyNjRkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Biography",
+                    "Fantasy",
+                    "Musical"
+                ],
+                "actors": [
+                    "Michael Gracey",
+                    "Jonno Davies",
+                    "Steve Pemberton"
+                ]
+            },
+            "rank": 8
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Lee",
+                "release_year": "2023",
+                "score": "6.9",
+                "summary": "The story of American photographer Lee Miller, a fashion model who became an acclaimed war correspondent for Vogue magazine during World War II.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BMDlhMDY0NTAtOTQwZi00ZjIxLTk2ZmYtZjU1Y2FiYWRhZDk3XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
+                "genres": [
+                    "Biography",
+                    "Drama",
+                    "History"
+                ],
+                "actors": [
+                    "Ellen Kuras",
+                    "Andy Samberg",
+                    "Alexander Skarsgård"
+                ]
+            },
+            "rank": 9
+        },
+        {
+            "country": "Australia",
+            "movie": {
+                "title": "Territory",
+                "release_year": "2024",
+                "score": "6.9",
+                "summary": "When the massive Lawson cattle station lacks an heir, Australia's rival factions see a chance to seize control. The land grabs threaten to destroy the declining dynasty.",
+                "image_url": "https://m.media-amazon.com/images/M/MV5BNmIzZjVhMTgtNWYyZS00Mzg4LWEwZDItYzRmMzU1ZjRhOTZlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
+                "genres": [
+                    "Adventure",
+                    "Drama",
+                    "Western"
+                ],
+                "actors": [
+                    "Ben Davies",
+                    "Timothy Lee",
+                    "Robert Taylor"
+                ]
+            },
+            "rank": 10
+        }
+    ]
+}
