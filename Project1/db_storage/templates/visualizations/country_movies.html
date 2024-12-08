@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="visualization">
+    <h1>국가별 영화 데이터 시각화: {{ country_name }}</h1>
+    <div>{{ top_k_html|safe }}</div>
+    <div>{{ wordcloud_html|safe }}</div>
+    <div>{{ piechart_html|safe }}</div>
+    <div>{{ average_rating_html|safe }}</div>
+</div>
+{% endblock %}
