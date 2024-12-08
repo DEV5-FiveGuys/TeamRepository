@@ -1,0 +1,39 @@
+/* static/css/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* #f4f4f4로 변경했습니다. */
+}
+
+header {
+    background-color: #333; /* color를 background-color로 수정했습니다. */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none; /* list-style을 list-style-type으로 수정했습니다. */
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+main {
+    padding: 20px;
+    background-color: #fff; /* background를 background-color로 수정했습니다. */
+    margin: 20px auto;
+    width: 80%;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333; /* background를 background-color로 수정했습니다. */
+    color: #fff;
+}

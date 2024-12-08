@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}영화 상세 정보{% endblock %}
+
+{% block content %}
+<div class="movie-details">
+    <h2>{{ movie.title }}</h2>
+    <img src="{{ movie.image_url }}" alt="{{ movie.title }}">
+    <p><strong>개봉 연도:</strong> {{ movie.release_year }}</p>
+    <p><strong>평점:</strong> {{ movie.score }}</p>
+    <p><strong>요약:</strong> {{ movie.summary }}</p>
+    <p><strong>장르:</strong> {% for genre in movie.genres.all %}{{ genre.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p><strong>배우:</strong> {% for actor in movie.actors.all %}{{ actor.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+</div>
+{% endblock %}
