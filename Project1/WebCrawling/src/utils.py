@@ -126,7 +126,7 @@ def configure_chrome_options():
     return options
 
 
-def load_country_codes(filepath='./data/raw/country_code.json':str)->dict:
+def load_country_codes(filepath='./data/raw/country_code.json')->dict:
     """
     Load country codes from a JSON file.
     Parameters:
@@ -224,7 +224,7 @@ def save_dict_as_json(data, file_path):
         print(f"An error occured:{e}")
 
 
-def crawling(top_n=10:int)->list(dict):
+def crawling(top_n=10)->dict:
     """
     Main crawling function.
     Parameters:
@@ -259,6 +259,8 @@ def crawling(top_n=10:int)->list(dict):
                         },
                         "rank": content["rank"]
                     })
-        save_at = f'./data/raw/movies_data_{today_date}.json'
+        save_at = f'./data/raw/movie_data{today_date}.json'
         save_dict_as_json(result, save_at)
     return result
+
+crawling()
