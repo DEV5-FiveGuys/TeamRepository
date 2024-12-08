@@ -13,6 +13,7 @@ media
 Scripts
 pyvenv.cfg
 sql*
+share\man\man1\ttx.1
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -279,6 +280,6 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,jupyternotebooks
 
-.anaconda/"test.ipynb"
-"test.ipynb"
-.DS_Store
+.anaconda/"test.ipynb" 
+"test.ipynb" 
+share/man/man1/ttx.1
