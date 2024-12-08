@@ -34,11 +34,11 @@ class MovieCrawler:
             'stars': '/div[3]/div/ul/li[{}]'
         }
         self.CLOSE_BUTTON_XPATH:Final = '/html/body/div[4]/div[2]/div/div[1]/button'
-        self.BUTTON_XPATH_TEMPLATE = (
+        self.BUTTON_XPATH_TEMPLATE:Final = (
             '//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/'
             'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
         )
-        self.country_codes_filepath:Final = country_codes_filepath
+        self.country_codes_filepath = country_codes_filepath
         self.top_n = top_n
 
     def initialize_driver(self):
@@ -131,6 +131,7 @@ class MovieCrawler:
             '//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/'
             'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
         )
+        self.save_at:Final = './crawler/data/movies_data_country.json'
         self.country_codes_filepath = country_codes_filepath
         self.top_n = top_n
         
@@ -283,19 +284,41 @@ class MovieCrawler:
     def crawling(self):
         """크롤링 메인 함수"""
         result = {"movies": []}
-        country_code_dict = self.load_country_codes()
+        try:
+            country_code_dict = self.load_country_codes()
+        except Exception as e:
+            print(f"국가 코드 로드 중 오류 발생: {e}")
+            return result  # 국가 코드를 로드하지 못하면 진행 불가
 
         for country_code, country in country_code_dict.items():
-            with self.initialize_driver() as driver:
-                wait = WebDriverWait(driver, 10)
-                country_url = self.BASE_URL.format(country_code)
-                driver.get(country_url)
+            try:
+                with self.initialize_driver() as driver:
+                    wait = WebDriverWait(driver, 10)
+                    country_url = self.BASE_URL.format(country_code)
 
-                for i in range(1, self.top_n + 1):
-                    content = self.process_movie(driver, wait, country, country_code, i)
-                    if content:
-                        result["movies"].append(self.transform_content_to_result(content, country))
+                    try:
+                        driver.get(country_url)
+                    except Exception as e:
+                        print(f"URL 접근 중 오류 발생: {e}")
+                        continue  # 현재 국가 건너뛰기
 
-            save_at = f'./crawler/data/raw/movies_dat_country.json'
+                    for i in range(1, self.top_n + 1):
+                        try:
+                            content = self.process_movie(driver, wait, country, country_code, i)
+                            if content:
+                                result["movies"].append(self.transform_content_to_result(content, country))
+                        except Exception as e:
+                            print(f"영화 데이터 처리 중 오류 발생 (영화 순위 {i}): {e}")
+
+            except Exception as e:
+                print(f"드라이버 초기화 또는 국가 코드 처리 중 오류 발생 ({country_code}, {country}): {e}")
+                continue  # 드라이버 관련 문제가 있으면 현재 국가 건너뛰기
+
+        try:
+            save_at = './crawler/data/raw/movies_dat_country.json'
             self.save_dict_as_json(result, save_at)
+        except Exception as e:
+            print(f"결과 저장 중 오류 발생: {e}")
+
         return result
+

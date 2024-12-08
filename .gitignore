@@ -14,6 +14,7 @@ Scripts
 pyvenv.cfg
 sql*
 share\man\man1\ttx.1
+Project1\crawler\backup\WebCrawling\requirements_YJ.txt
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.

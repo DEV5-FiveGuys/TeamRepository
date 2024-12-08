@@ -48,17 +48,13 @@
                 "title": "Gisaengchung",
                 "release_year": "2019",
                 "score": "8.5",
-                "summary": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Drama",
                     "Thriller"
                 ],
-                "actors": [
-                    "Bong Joon Ho",
-                    "Lee Sun-kyun",
-                    "Cho Yeo-jeong"
-                ]
+                "actors": []
             },
             "rank": 3
         },
@@ -110,14 +106,18 @@
                 "title": "Teu-reong-keu",
                 "release_year": "2024",
                 "score": "7.2",
-                "summary": "",
+                "summary": "A secret marriage service is uncovered when a trunk washes up on the shore, revealing the strange marriage between a couple in the thick of it all.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMDRkNGFkNjAtMDE1Yy00ZDRlLWEyYjEtYTBkNzBmZjAwZDk5XkEyXkFqcGc@._V1_QL75_UY107_CR17,0,72,107_.jpg",
                 "genres": [
                     "Drama",
                     "Mystery",
                     "Romance"
                 ],
-                "actors": []
+                "actors": [
+                    "Seo Hyeon-jin",
+                    "Gong Yoo",
+                    "Jung Yun-Ha"
+                ]
             },
             "rank": 6
         },
@@ -223,14 +223,18 @@
                 "title": "Wicked: Part I",
                 "release_year": "2024",
                 "score": "8.1",
-                "summary": "",
+                "summary": "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMGNhMWFmZGUtODRmYy00MzljLWEwYWEtNzBhODg0MTkzZWNlXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
                 "genres": [
                     "Fantasy",
                     "Musical",
                     "Romance"
                 ],
-                "actors": []
+                "actors": [
+                    "Jon M. Chu",
+                    "Ariana Grande",
+                    "Jeff Goldblum"
+                ]
             },
             "rank": 2
         },
@@ -240,14 +244,18 @@
                 "title": "Gladiator II",
                 "release_year": "2024",
                 "score": "6.9",
-                "summary": "",
+                "summary": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNGFlMDE4MDQtNGRmMS00YThmLWFkYmUtOTZhMDdjOGMxNzk0XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Adventure",
                     "Drama"
                 ],
-                "actors": []
+                "actors": [
+                    "Ridley Scott",
+                    "Denzel Washington",
+                    "Pedro Pascal"
+                ]
             },
             "rank": 3
         },
@@ -257,17 +265,13 @@
                 "title": "A Man on the Inside",
                 "release_year": "2024",
                 "score": "7.8",
-                "summary": "Charles, a retired man, gets a new lease on life when he answers an ad from a private investigator and becomes a mole in a secret investigation in a nursing home.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYzgwOGIwZjAtZTg0OS00ZGRkLTgxMjUtMjU2NDA2Yjc4NTc1XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
                     "Comedy",
                     "Crime"
                 ],
-                "actors": [
-                    "Ted Danson",
-                    "Mary Elizabeth Ellis",
-                    "Lilah Richcreek Estrada"
-                ]
+                "actors": []
             },
             "rank": 4
         },
@@ -334,7 +338,7 @@
             "movie": {
                 "title": "Landman",
                 "release_year": "2024",
-                "score": "8.2",
+                "score": "8.3",
                 "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNTRkY2ZkNzUtMzBlNC00NTc0LWE0ZDQtMWZiNGU5OWEyZGU4XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
@@ -367,14 +371,18 @@
                 "title": "글래디에이터",
                 "release_year": "2000",
                 "score": "8.5",
-                "summary": "",
+                "summary": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNTE3MjU5ZTYtZmUzMy00MDdlLTllODktOGFjMTBhNDIxODk2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Adventure",
                     "Drama"
                 ],
-                "actors": []
+                "actors": [
+                    "Ridley Scott",
+                    "Joaquin Phoenix",
+                    "Connie Nielsen"
+                ]
             },
             "rank": 10
         },
@@ -468,13 +476,17 @@
                 "title": "Seobeuseuteonseu",
                 "release_year": "2024",
                 "score": "7.4",
-                "summary": "",
+                "summary": "A fading celebrity takes a black-market drug: a cell-replicating substance that temporarily creates a younger, better version of herself.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_QL75_UY107_CR0,0,72,107_.jpg",
                 "genres": [
                     "Drama",
                     "Horror"
                 ],
-                "actors": []
+                "actors": [
+                    "Coralie Fargeat",
+                    "Margaret Qualley",
+                    "Dennis Quaid"
+                ]
             },
             "rank": 5
         },
@@ -562,7 +574,7 @@
             "movie": {
                 "title": "Alien: Romulus",
                 "release_year": "2024",
-                "score": "7.2",
+                "score": "7.1",
                 "summary": "While scavenging the deep ends of a derelict space station, a group of young space colonists come face to face with the most terrifying life form in the universe.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNDMyNzgzMjctYmI2NS00OWI3LWI2YjAtYWM4MWVjNGEzMWRkXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
@@ -583,7 +595,7 @@
             "movie": {
                 "title": "Alien: Romulus",
                 "release_year": "2024",
-                "score": "7.2",
+                "score": "7.1",
                 "summary": "While scavenging the deep ends of a derelict space station, a group of young space colonists come face to face with the most terrifying life form in the universe.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNDMyNzgzMjctYmI2NS00OWI3LWI2YjAtYWM4MWVjNGEzMWRkXkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
@@ -633,11 +645,7 @@
                     "Adventure",
                     "Sci-Fi"
                 ],
-                "actors": [
-                    "George Miller",
-                    "Chris Hemsworth",
-                    "Tom Burke"
-                ]
+                "actors": []
             },
             "rank": 3
         },
@@ -667,18 +675,14 @@
                 "title": "The Fall Guy",
                 "release_year": "2024",
                 "score": "6.9",
-                "summary": "A stuntman, fresh off an almost career-ending accident, has to track down a missing movie star, solve a conspiracy and try to win back the love of his life while still doing his day job. What could possibly go right?",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BOWU1MDU4MWEtMGEwZS00NmE0LWI1OTYtYjU0NGRhYWZkNWM5XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Comedy",
                     "Drama"
                 ],
-                "actors": [
-                    "David Leitch",
-                    "Emily Blunt",
-                    "Aaron Taylor-Johnson"
-                ]
+                "actors": []
             },
             "rank": 5
         },
@@ -707,18 +711,14 @@
                 "title": "폴라 익스프레스",
                 "release_year": "2004",
                 "score": "6.6",
-                "summary": "On Christmas Eve, a young boy embarks on a magical adventure to the North Pole on the Polar Express, while learning about friendship, bravery, and the spirit of Christmas.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMTM1NTU0NTE4MV5BMl5BanBnXkFtZTcwMTQ0MjEzMw@@._V1_QL75_UY107_CR0,0,72,107_.jpg",
                 "genres": [
                     "Animation",
                     "Adventure",
                     "Comedy"
                 ],
-                "actors": [
-                    "Robert Zemeckis",
-                    "Chris Coppola",
-                    "Michael Jeter"
-                ]
+                "actors": []
             },
             "rank": 7
         },
@@ -728,18 +728,14 @@
                 "title": "Better Man",
                 "release_year": "2024",
                 "score": "6.9",
-                "summary": "A singular profile of British pop superstar Robbie Williams.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYWU3YzU0NTItMGVlYi00YTFmLWE5MmQtNjg4ODQ3ZWYyNjRkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Biography",
                     "Fantasy",
                     "Musical"
                 ],
-                "actors": [
-                    "Michael Gracey",
-                    "Jonno Davies",
-                    "Steve Pemberton"
-                ]
+                "actors": []
             },
             "rank": 8
         },
@@ -749,14 +745,18 @@
                 "title": "Lee",
                 "release_year": "2023",
                 "score": "6.9",
-                "summary": "",
+                "summary": "The story of American photographer Lee Miller, a fashion model who became an acclaimed war correspondent for Vogue magazine during World War II.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BMDlhMDY0NTAtOTQwZi00ZjIxLTk2ZmYtZjU1Y2FiYWRhZDk3XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Biography",
                     "Drama",
                     "History"
                 ],
-                "actors": []
+                "actors": [
+                    "Ellen Kuras",
+                    "Andy Samberg",
+                    "Alexander Skarsgård"
+                ]
             },
             "rank": 9
         },
@@ -766,14 +766,18 @@
                 "title": "Territory",
                 "release_year": "2024",
                 "score": "6.9",
-                "summary": "",
+                "summary": "When the massive Lawson cattle station lacks an heir, Australia's rival factions see a chance to seize control. The land grabs threaten to destroy the declining dynasty.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNmIzZjVhMTgtNWYyZS00Mzg4LWEwZDItYzRmMzU1ZjRhOTZlXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Adventure",
                     "Drama",
                     "Western"
                 ],
-                "actors": []
+                "actors": [
+                    "Ben Davies",
+                    "Timothy Lee",
+                    "Robert Taylor"
+                ]
             },
             "rank": 10
         },
@@ -817,17 +821,13 @@
                 "title": "시티 오브 갓",
                 "release_year": "2002",
                 "score": "8.6",
-                "summary": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZjU0NWVmODAtMjVmOC00YzBiLWEzNGItMjUwMWQxOWJmYTA5XkEyXkFqcGc@._V1_QL75_UY107_CR0,0,72,107_.jpg",
                 "genres": [
                     "Crime",
                     "Drama"
                 ],
-                "actors": [
-                    "Fernando Meirelles",
-                    "Kátia Lund",
-                    "Matheus Nachtergaele"
-                ]
+                "actors": []
             },
             "rank": 3
         },
@@ -912,14 +912,18 @@
                 "title": "Fast Five",
                 "release_year": "2011",
                 "score": "7.3",
-                "summary": "",
+                "summary": "Dominic Toretto and his crew of street racers plan a massive heist to buy their freedom while in the sights of a powerful Brazilian drug lord and a dangerous federal agent.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZjdkN2JlODMtYmNkZi00MDRkLWE5YTktMmRjYjI2MzA0Zjk5XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Crime",
                     "Thriller"
                 ],
-                "actors": []
+                "actors": [
+                    "Justin Lin",
+                    "Paul Walker",
+                    "Dwayne Johnson"
+                ]
             },
             "rank": 8
         },
@@ -929,12 +933,16 @@
                 "title": "Fallen",
                 "release_year": "2024",
                 "score": "6.3",
-                "summary": "",
+                "summary": "Follows Luce, a young woman who is sent to Sword and Cross, a cult-like rehabilitation facility, where she must serve time for a crime she doesn't even remember committing.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYzA4OTQwYzQtZGE1NC00MGM1LWEwOTUtYjcyMDU4N2UyOGVjXkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
                     "Fantasy"
                 ],
-                "actors": []
+                "actors": [
+                    "Jessica Alexander",
+                    "Gijs Blom",
+                    "Timothy Innes"
+                ]
             },
             "rank": 9
         },
@@ -944,14 +952,18 @@
                 "title": "The Princess and the Frog",
                 "release_year": "2009",
                 "score": "7.2",
-                "summary": "",
+                "summary": "A waitress desperate to fulfill her dreams as a restaurant owner is set on a journey to turn a frog prince back into a human, but she has to face the same problem after she kisses him.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BOTE3YTExYTEtOTUxZC00OTM0LWJmYmItMDk5YjczNmIwNzA2XkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Animation",
                     "Adventure",
                     "Comedy"
                 ],
-                "actors": []
+                "actors": [
+                    "Ron Clements",
+                    "John Musker",
+                    "Oprah Winfrey"
+                ]
             },
             "rank": 10
         },
@@ -961,14 +973,18 @@
                 "title": "One Piece",
                 "release_year": "2023",
                 "score": "8.3",
-                "summary": "",
+                "summary": "In a seafaring world, a young pirate captain sets out with his crew to attain the title of Pirate King, and to discover the mythical treasure known as 'One Piece.'",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYzhkM2QxYWMtYzFmMi00OGU2LTk0OTktNmU2MjYyNjExOWNkXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Adventure",
                     "Comedy"
                 ],
-                "actors": []
+                "actors": [
+                    "Matt Owens",
+                    "Steven Maeda",
+                    "Mackenyu"
+                ]
             },
             "rank": 1
         },
@@ -978,14 +994,18 @@
                 "title": "검은 해적",
                 "release_year": "2014–2017",
                 "score": "8.2",
-                "summary": "",
+                "summary": "Follows Captain Flint and his pirates twenty years prior to Robert Louis Stevenson's classic novel \"Treasure Island.\"",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZGZmOGNjNzUtNTNkMC00ZDU2LThjMDAtZGM2OGRjMjE1OGQ5XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Adventure",
                     "Drama"
                 ],
-                "actors": []
+                "actors": [
+                    "Robert Levine",
+                    "Jonathan E. Steinberg",
+                    "Hannah New"
+                ]
             },
             "rank": 2
         },
@@ -995,17 +1015,13 @@
                 "title": "The Fix",
                 "release_year": "2024",
                 "score": "4.5",
-                "summary": "In a future with toxic air, a model takes a drug causing a transformation. She tries reversing it but learns her mutations could save humanity.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZTc4ZjM2YTktYmNmNS00ZGNmLWJiYTYtMmU3Y2Q3OTdkYjgyXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
                 "genres": [
                     "Action",
                     "Sci-Fi"
                 ],
-                "actors": [
-                    "Kelsey Egan",
-                    "Grace Van Dien",
-                    "Daniel Sharman"
-                ]
+                "actors": []
             },
             "rank": 3
         },
@@ -1053,12 +1069,16 @@
                 "title": "Street Trash",
                 "release_year": "2024",
                 "score": "4.4",
-                "summary": "",
+                "summary": "A group of homeless misfits must fight for survival when they discover a plot to exterminate every homeless person in the city.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BODI5NzRkZDctYzA3ZC00OWM0LWE0NGMtZTE0MzgxZjJlZjQ2XkEyXkFqcGc@._V1_QL75_UX72_CR0,1,72,107_.jpg",
                 "genres": [
                     "Horror"
                 ],
-                "actors": []
+                "actors": [
+                    "Ryan Kruger",
+                    "Donna Cormack-Thomson",
+                    "Joe Vaz"
+                ]
             },
             "rank": 6
         },
@@ -1106,12 +1126,16 @@
                 "title": "Lioness",
                 "release_year": "2021",
                 "score": "7.6",
-                "summary": "",
+                "summary": "A woman loses her children, her lover and her freedom when she is framed for fraud committed by her husband before his death.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BM2IzNmNhMTktNmYxZi00NTc4LWI4NmYtOGJiNDdjYzE0ZmRmXkEyXkFqcGc@._V1_QL75_UY107_CR2,0,72,107_.jpg",
                 "genres": [
                     "Thriller"
                 ],
-                "actors": []
+                "actors": [
+                    "Shannon Esra",
+                    "Evan Hengst",
+                    "Carla Classen"
+                ]
             },
             "rank": 9
         },
@@ -1121,13 +1145,17 @@
                 "title": "The Last House on the Left",
                 "release_year": "2009",
                 "score": "6.5",
-                "summary": "",
+                "summary": "After kidnapping and brutally assaulting two young women, a gang unknowingly finds refuge at a vacation home belonging to the parents of one of the victims: a mother and father who devise an increasingly gruesome series of revenge tactics.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYmIxYWZhODAtMTU4MC00ZGU5LWIzYjgtZjA5NTk3MGI5NzQ2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Horror",
                     "Thriller"
                 ],
-                "actors": []
+                "actors": [
+                    "Dennis Iliadis",
+                    "Monica Potter",
+                    "Tony Goldwyn"
+                ]
             },
             "rank": 10
         }
