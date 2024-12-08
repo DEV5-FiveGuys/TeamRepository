@@ -279,5 +279,6 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,jupyternotebooks
 
-.anaconda/"test.ipynb" 
-"test.ipynb" 
+.anaconda/"test.ipynb"
+"test.ipynb"
+.DS_Store
