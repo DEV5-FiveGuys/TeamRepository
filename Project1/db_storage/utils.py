@@ -42,7 +42,7 @@ def save_movies_from_json(parsed_data: list) -> dict:
                 movie_info = movie_data['movie']
                 # score null 처리
                 score = movie_info.get('score', 0.0)
-                if score or score == 'null':
+                if not score or score == 'null':
                     score = Decimal(0)
                 movie, created = Movie.objects.get_or_create(
                     title=movie_info['title'],

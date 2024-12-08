@@ -152,13 +152,17 @@
                 "title": "Mr. Peullangkeuton",
                 "release_year": "2024",
                 "score": "8.1",
-                "summary": "",
+                "summary": "A man with little chance for happiness and his ex, the unhappiest bride-to-be, are forced to accompany one another on the final journey of his life.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNzNkMzNmZjAtNTM2Ni00OGNkLTk2MzQtZWU3ZDMwNjUzYTZkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Comedy",
                     "Romance"
                 ],
-                "actors": []
+                "actors": [
+                    "Woo Do-Hwan",
+                    "Lee Yoo-mi",
+                    "Oh Jung-se"
+                ]
             },
             "rank": 8
         },
@@ -395,7 +399,7 @@
                 "title": "글래디에이터",
                 "release_year": "2000",
                 "score": "8.5",
-                "summary": "",
+                "summary": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BNTE3MjU5ZTYtZmUzMy00MDdlLTllODktOGFjMTBhNDIxODk2XkEyXkFqcGc@._V1_QL75_UY107_CR1,0,72,107_.jpg",
                 "genres": [
                     "Action",
@@ -465,11 +469,7 @@
                     "Drama",
                     "Thriller"
                 ],
-                "actors": [
-                    "Eddie Redmayne",
-                    "Lashana Lynch",
-                    "Eleanor Matsuura"
-                ]
+                "actors": []
             },
             "rank": 3
         },
@@ -579,17 +579,13 @@
                 "title": "Conclave",
                 "release_year": "2024",
                 "score": "7.4",
-                "summary": "When Cardinal Lawrence is tasked with leading one of the world's most secretive and ancient events, selecting a new Pope, he finds himself at the center of a conspiracy that could shake the very foundation of the Catholic Church.",
+                "summary": "",
                 "image_url": "https://m.media-amazon.com/images/M/MV5BYjgxMDI5NmMtNTU3OS00ZDQxLTgxZmEtNzY1ZTBmMDY4NDRkXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Drama",
                     "Thriller"
                 ],
-                "actors": [
-                    "Edward Berger",
-                    "Stanley Tucci",
-                    "John Lithgow"
-                ]
+                "actors": []
             },
             "rank": 9
         },
@@ -827,7 +823,7 @@
                 "title": "Senna",
                 "release_year": "2024",
                 "score": "8.5",
-                "summary": "Fictional miniseries based on the life of Ayrton Senna da Silva, the Brazilian racing legend who won the Formula One World Drivers' Championship three times.",
+                "summary": null,
                 "image_url": "https://m.media-amazon.com/images/M/MV5BZDI2ZjQyMzItYjg4NS00ZWYzLWE2M2EtYTNiN2Y4Mzc5Y2EwXkEyXkFqcGc@._V1_QL75_UX72_CR0,0,72,107_.jpg",
                 "genres": [
                     "Biography",
