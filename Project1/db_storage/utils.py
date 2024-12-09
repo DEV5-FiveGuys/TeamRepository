@@ -3,7 +3,7 @@ import logging
 from django.db import transaction
 from .models import Movie, Genre, Actor, Country, Ranking, MovieGenre, MovieActor
 
-def save_movies_from_json(parsed_data):
+def save_movies_from_json(parsed_data: list) -> dict:
     """
     JSON 데이터를 파싱하여 Django 데이터베이스에 저장하는 함수.
     중복 데이터 및 업데이트된 데이터를 반환.
@@ -66,7 +66,7 @@ def save_movies_from_json(parsed_data):
                         updated_fields.append('release_year')
                     # 소수점 1자리까지 반올림하여 비교 => float형 부동소수점 비교때문에
                     # 에러 있어서 round 삭제
-                    if movie.score != score:
+                    if Decimal(movie.score) != Decimal(score):
                         movie.score = score
                         updated_fields.append('score')
                     if movie.summary != movie_info.get('summary', ''):
