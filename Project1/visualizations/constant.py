@@ -10,15 +10,38 @@ empty_star_svg: Final = \
 
 # wordcloud용 mask의 경로
 MASK_PATH: Final = 'visualizations/data/film_camera_mask.png'
-# 불용어
-STOPWORDS: Final = {
-    "a", "an", "the", "is", "are", "was", "were", "to", "of", "in", 
-    "with", "and", "for", "on", "at", "by", "this", "that", "these", 
-    "those", "there", "it", "be", "has", "have", "had", "will", "can", "do", 
-    "does", "did", "character", "story", "plot", "film", "movie", 
-    "scene", "part", "role", "play", "actor", "actress", "series", 
-    "place", "time", "moment", "way", "world", "day", "night", "year" , "Hui", "Ju"
-}
 
 # html path
 HTML_PATH: Final = 'db_storage/html/'
+
+# 불용어
+STOPWORDS: Final = {
+    # 관사
+    "a", "an", "the",
+    
+    # 대명사
+    "he", "she", "it", "they", "him", "her", "them", "his", "their", 
+    "this", "that", "these", "those",
+    
+    # 동사 및 조동사
+    "is", "are", "was", "were", "be", "has", "have", "had", "will", 
+    "can", "do", "does", "did",
+    
+    # 전치사
+    "to", "of", "in", "with", "for", "on", "at", "by", "about", "such", "which",
+    
+    # 부사
+    "very", "so", "just", "only", "more", "most", "many", "much", 
+    "some", "like", "all",
+    
+    # 영화 관련 기타 단어
+    "character", "story", "plot", "film", "movie", "scene", "part", 
+    "role", "play", "actor", "actress", "series", "place", 
+    "moment", "way", "world", "day", "night", "year",
+    
+    # 숫자 및 순서 표현
+    "first", "second", "one", "two",
+    
+    # 기타
+    "Hui", "Ju"
+}
