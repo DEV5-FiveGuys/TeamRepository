@@ -37,7 +37,7 @@ STOPWORDS: Final = {
     # 영화 관련 기타 단어
     "character", "story", "plot", "film", "movie", "scene", "part", 
     "role", "play", "actor", "actress", "series", "place", 
-    "moment", "way", "world", "day", "night", "year",
+    "moment", "way", "world", "day", "night",
     
     # 숫자 및 순서 표현
     "first", "second", "one", "two",
