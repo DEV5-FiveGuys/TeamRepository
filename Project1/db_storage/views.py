@@ -1,6 +1,9 @@
 import os
 import json
 import logging
+from pathlib import Path
+from typing import Final
+from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -61,6 +64,8 @@ class BulkInsertRankingView(APIView):
 
 
 class GetMovieListByCountryAPIView(APIView):
+    HTML_PATH: Final = 'db_project.templates.combined_visualization.html'
+    
     def get(self, request, country_name) -> Response:
         # URL 또는 Query Parameter에서 'country_name' 가져오기
 
@@ -74,11 +79,11 @@ class GetMovieListByCountryAPIView(APIView):
                 ) # TODO: Validation Visualizer로 이전
             # visualizer 
             visualizer = Visualizer(country_name=country_name)
-            visualizer.visualize_TOPK(k=5)
-            visualizer.visualize_wordcloud(display_type='html', colormap='magma')
-            visualizer.visualize_piechart(k=8)
-            visualizer.visualize_average_rating()
-            return Response({'message': 'success'})
+            output_path = visualizer.create_combined_html() # HTML 파일 생성
+            
+            # 3. 생성된 HTML 파일 읽기 및 반환
+            html_content = Path(output_path).read_text(encoding='utf-8')
+            return HttpResponse(html_content, content_type="text/html")
             
         except Exception as e:
            return Response(
