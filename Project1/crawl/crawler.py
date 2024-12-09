@@ -13,34 +13,6 @@ from datetime import datetime
 from typing import Final
 
 class MovieCrawler:
-    def __init__(self, country_codes_filepath='./data/raw/country_code.json', top_n=10):
-        """
-        크롤러 초기화 함수
-
-        :param country_codes_filepath: 국가 코드가 저장된 JSON 파일 경로
-        :param top_n: 크롤링할 영화의 수
-        """
-        self.BASE_URL:Final = 'https://www.imdb.com/search/title/?countries={}'
-        self.BASE_XPATH:Final = '/html/body/div[4]/div[2]/div/div[2]/div/div'
-        self.RELATIVE_XPATHS:Final = {
-            'img': '/div[1]/div[1]/div/div/img',
-            'title': '/div[1]/div[2]/div[1]/a/h3',
-            'year': '/div[1]/div[2]/ul[1]/li[1]',
-            'score': '/div[1]/div[2]/div[2]/span/span[1]',
-            'summary': '/div[2]'
-        }
-        self.ELEMENTS_PATH:Final = {
-            'genre': '/div[1]/div[2]/ul[2]/li[{}]',
-            'stars': '/div[3]/div/ul/li[{}]'
-        }
-        self.CLOSE_BUTTON_XPATH:Final = '/html/body/div[4]/div[2]/div/div[1]/button'
-        self.BUTTON_XPATH_TEMPLATE:Final = (
-            '//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/'
-            'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
-        )
-        self.country_codes_filepath = country_codes_filepath
-        self.top_n = top_n
-
     def initialize_driver(self):
         """
         Chrome WebDriver를 초기화하는 함수
@@ -73,16 +45,6 @@ class MovieCrawler:
         """
         button = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
         ActionChains(driver).click(button).perform()
-
-    def log_error(self, country, rank, error):
-        """
-        에러 발생 시 로그를 기록하는 함수
-        
-        :param country: 영화가 속한 국가
-        :param rank: 영화의 순위
-        :param error: 발생한 예외
-        """
-        print(f"Error processing item {rank} for {country}: {error}")
 
     def transform_content_to_result(self, content: dict, country: str) -> dict:
         """
@@ -131,11 +93,11 @@ class MovieCrawler:
             '//*[@id="__next"]/main/div[2]/div[3]/section/section/div/section/section/div[2]/div/section/'
             'div[2]/div[2]/ul/li[{}]/div/div/div/div[1]/div[3]/button'
         )
-        self.save_at:Final = './crawler/data/raw/movies_data_country.json'
+        self.save_at:Final = './crawl/data/raw/movies_data_country.json'
         self.country_codes_filepath = country_codes_filepath
         self.top_n = top_n
         
-    def load_country_codes(self, filepath='./crawler/data/raw/country_code.json'):
+    def load_country_codes(self, filepath='./crawl/data/raw/country_code.json'):
         """국가 코드 로드"""
         if not os.path.exists(filepath):
             print(f"{filepath} 파일이 존재하지 않습니다. 기본 데이터를 생성합니다.")
@@ -145,7 +107,7 @@ class MovieCrawler:
         with open(filepath, 'r', encoding='utf-8') as file:
             return json.load(file)
         
-    def create_default_country_code_file(self, filepath: str ='./crawler/data/raw/country_code.json'):
+    def create_default_country_code_file(self, filepath: str ='./crawl/data/raw/country_code.json'):
         """기본 국가 코드 데이터를 json 파일로 생성하는 함수."""
         # 기본 국가 코드 데이터
         default_data = {
@@ -284,40 +246,46 @@ class MovieCrawler:
     def crawling(self):
         """크롤링 메인 함수"""
         result = {"movies": []}
+
         try:
+            # 국가 코드 로드
             country_code_dict = self.load_country_codes()
+        except FileNotFoundError:
+            print("Country code file not found. Creating default file.")
+            self.create_default_country_code_file(self.country_codes_filepath)
+            country_code_dict = self.load_country_codes()
+        except json.JSONDecodeError:
+            print("Error decoding the country code file. Please check the file format.")
+            return result
         except Exception as e:
-            print(f"국가 코드 로드 중 오류 발생: {e}")
-            return result  # 국가 코드를 로드하지 못하면 진행 불가
+            print(f"Unexpected error while loading country codes: {e}")
+            return result
 
         for country_code, country in country_code_dict.items():
             try:
                 with self.initialize_driver() as driver:
                     wait = WebDriverWait(driver, 10)
-                    country_url = self.BASE_URL.format(country_code)
+                    driver.get(self.BASE_URL.format(country_code))
 
-                    try:
-                        driver.get(country_url)
-                    except Exception as e:
-                        print(f"URL 접근 중 오류 발생: {e}")
-                        continue  # 현재 국가 건너뛰기
-
-                    for i in range(1, self.top_n + 1):
+                    for rank in range(1, self.top_n + 1):
                         try:
-                            content = self.process_movie(driver, wait, country, country_code, i)
+                            content = self.process_movie(driver, wait, country, country_code, rank)
                             if content:
                                 result["movies"].append(self.transform_content_to_result(content, country))
                         except Exception as e:
-                            print(f"영화 데이터 처리 중 오류 발생 (영화 순위 {i}): {e}")
-
+                            self.log_error(country, rank, e)
+            except webdriver.WebDriverException:
+                print(f"WebDriver error while processing country: {country} ({country_code})")
             except Exception as e:
-                print(f"드라이버 초기화 또는 국가 코드 처리 중 오류 발생 ({country_code}, {country}): {e}")
-                continue  # 드라이버 관련 문제가 있으면 현재 국가 건너뛰기
+                print(f"Unexpected error for country {country} ({country_code}): {e}")
 
         try:
             self.save_dict_as_json(result, self.save_at)
+        except IOError:
+            print("Failed to save results due to file I/O error.")
         except Exception as e:
-            print(f"결과 저장 중 오류 발생: {e}")
+            print(f"Unexpected error while saving results: {e}")
 
         return result
+
 
