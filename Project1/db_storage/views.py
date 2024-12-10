@@ -11,6 +11,8 @@ from db_storage.utils import *  # utils.py에서 함수 호출
 from db_storage.models import *
 from visualizations.visualizer import Visualizer
 from crawl.crawler import MovieCrawler
+from django.shortcuts import render
+
 
 # JSON 파일 경로를 절대 경로로 설정
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -110,3 +112,10 @@ class CrawlMoviesView(APIView):
         except Exception as e:
             # 오류 발생 시 500 Internal Server Error 반환
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+
+def home(request):
+    """
+    Render the root page with the movie selector.
+    """
+    return render(request, 'home.html')
