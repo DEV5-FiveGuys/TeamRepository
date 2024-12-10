@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Movie Database{% endblock %}
+
+{% block content %}
+<h2>Top Movies</h2>
+<ul>
+    {% for movie in movies %}
+    <li>
+        <a href="{% url 'movie_details' movie.id %}">{{ movie.title }}</a> - {{ movie.release_year }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
